@@ -1,7 +1,7 @@
 export default function App () {
     return (
-        <div className="my-4 h-64 rounded bg-gray-300 p-3 shadow-lg">
-            hello
+        <div style={{ height: '80vh'}} className="my-4 rounded bg-white p-3 shadow-lg">
+            
         </div>
     )
 }
