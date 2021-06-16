@@ -1,6 +1,15 @@
+import authRoute from '../routes/auth-routes'
+import { Switch, Route } from 'react-router-dom'
 
-export default function App () {
+export default function App() {
+    console.log(authRoute);
     return (
-        <div className="w-2">hello world</div>
+        <div>
+           <Switch>
+                {authRoute.map(el => 
+                    <Route key={el.id} path={el.path} component={el.component}/>)
+                }
+            </Switch>
+        </div>
     )
 }
