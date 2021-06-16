@@ -1,12 +1,11 @@
+import { BrowserRouter } from "react-router-dom";
+import Root from "./Root.jsx";
 import './App.scss';
-import { Button } from '@material-ui/core';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      hellos <Button >fgas</Button>
-    </div>
+    <BrowserRouter>
+      <Root />
+    </BrowserRouter>
   );
 }
-
-export default App;
