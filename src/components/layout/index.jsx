@@ -9,7 +9,7 @@ export default function App ({ children }) {
         history.push(path)
     }
     return (
-        <div className="flex flex-wrap bg-blue-100 w-full h-screen">
+        <div className="flex flex-wrap bg-blue-100 w-full" style={{ minHeight: '100vh'}}>
         <div className="w-2/12 bg-white rounded p-3 shadow-lg">
             <div className="flex items-center justify-between space-x-4 p-2 mb-5">
                     <div className="flex justify-center items-center">

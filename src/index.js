@@ -4,7 +4,7 @@ import './index.css';
 import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 import "tailwindcss/tailwind.css"
-
+import './config/defaultSettings'
 
 ReactDOM.render(
     <App />,
