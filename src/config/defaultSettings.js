@@ -1,3 +1,4 @@
+import logo from '../assets/icons/logo_blue.png'
 
 const defaultSetting = {
     baseURL: process.env.REACT_BASE_URL, // base url for whole project
@@ -16,7 +17,7 @@ const defaultSetting = {
     fixSiderbar: true, // sticky sidebar
     project: {
         title: 'Delever',
-        logo: '',
+        logo,
         createdBy: 'Udevs company'
     }
 
