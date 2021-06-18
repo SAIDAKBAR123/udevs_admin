@@ -6,22 +6,27 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import BreadCrumb from '../../components/breadcrumb/index.jsx'
+import './index.scss'
 const StyledTableCell = withStyles((theme) => ({
     head: {
         backgroundColor: 'white',
-        color: theme.palette.common.white,
+        color: 'black',
+        fontFamily: 'Inter',
+        fontWeight: '600'
     },
     body: {
         fontSize: 14,
+        fontFamily: 'Inter'
     },
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
     root: {
         '&:nth-of-type(odd)': {
-            backgroundColor: 'rgba(14, 115, 246, 0.08)',
+            // backgroundColor: 'rgba(14, 115, 246, 0.08)',
         },
+        borderRadius: '6px'
     },
 }))(TableRow);
 
@@ -30,22 +35,23 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    createData('Eclair', 262, 16.0, 24, 6.0)
+    createData('01.03.21', 159, 6.0, 24, 4.0),
+    createData('01.03.21', 237, 9.0, 37, 4.3),
+    createData('01.03.21', 262, 16.0, 24, 6.0),
+    createData('01.03.21', 305, 3.7, 67, 4.3),
+    createData('01.03.21', 356, 16.0, 49, 3.9),
+    createData('01.03.21', 159, 6.0, 24, 4.0),
+    createData('01.03.21', 237, 9.0, 37, 4.3),
+    createData('01.03.21', 262, 16.0, 24, 6.0),
+    createData('01.03.21', 305, 3.7, 67, 4.3),
+    createData('01.03.21', 356, 16.0, 49, 3.9),
+    createData('01.03.21', 262, 16.0, 24, 6.0)
 ];
 
 const useStyles = makeStyles({
     table: {
         minWidth: 700,
+        borderRadius: '6px'
     },
 });
 
@@ -53,27 +59,38 @@ export default function App() {
     const classes = useStyles();
 
     return (
-        <div style={{ minHeight: '80vh' }} className="my-4 rounded bg-white p-5 shadow-lg">
-            <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="customized table">
+        <div style={{ minHeight: '80vh' }} className="my-4 rounded bg-white p-5 shadow-lg font-body">
+            <div><BreadCrumb items={[{ title: 'Дашборд'}, {title: 'Клиенты'}, { title: 'Заказы'}]} /></div>
+            <hr></hr>
+            <div className="py-4 font-semibold text-xl rounded bg-white">Общий отчет</div>
+            <hr></hr>
+            <div className="py-4 font-semibold text-xl rounded bg-white"></div>
+            <TableContainer elevation={0} component={Paper} className=" shadow-none rounded-xl">
+                <Table elevation={0} className={classes.table} aria-label="customized table">
                     <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                            <StyledTableCell align="right">Calories</StyledTableCell>
-                            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-                            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+                        <TableRow className="text-black font-body">
+                            <StyledTableCell>Число</StyledTableCell>
+                            <StyledTableCell align="center">Доставка</StyledTableCell>
+                            <StyledTableCell align="center">Самовывоз</StyledTableCell>
+                            <StyledTableCell align="center">Агрегаторы</StyledTableCell>
+                            <StyledTableCell align="center">Бесплатная доставка</StyledTableCell>
+                            <StyledTableCell align="center">Отмененные заказы</StyledTableCell>
+                            <StyledTableCell align="center">Отдано Кешбек</StyledTableCell>
+                            <StyledTableCell align="center">Отменено продано</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
-                            <StyledTableRow key={row.name}>
+                        {rows.map((row, i) => (
+                            <StyledTableRow key={row.name + i}>
                                 <StyledTableCell component="th" scope="row">
                                     {row.name}
                                 </StyledTableCell>
                                 <StyledTableCell align="right">{row.calories}</StyledTableCell>
                                 <StyledTableCell align="right">{row.fat}</StyledTableCell>
                                 <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                                <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                                <StyledTableCell align="right">{row.fat}</StyledTableCell>
+                                <StyledTableCell align="right">{row.protein}</StyledTableCell>
                                 <StyledTableCell align="right">{row.protein}</StyledTableCell>
                             </StyledTableRow>
                         ))}
