@@ -3,7 +3,7 @@ export default function App () {
     const history = useHistory()
     return ( 
         <div className="h-screen flex font-body">
-            <div className="w-6/12 h-screen flex justify-center items-center bg-gradient-to-t from-blue-100 via-white-100 to-white">
+            <div className="w-6/12 h-screen flex justify-center items-center bg-gradient-to-t from-blue-50 via-white-100 via-white-100 to-white">
             <svg width="512" height="144" viewBox="0 0 512 144" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="72" cy="72" r="72" fill="url(#paint0_linear)"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M76.998 104.465C86.6403 104.465 93.771 100.487 98.3901 92.5314C101.797 86.6296 103.5 79.4259 103.5 70.9204C103.5 67.5644 103.096 64.0349 102.287 60.3318C101.479 56.6287 99.9635 53.186 97.7406 50.0037C94.9691 46.0691 91.346 43.3641 86.8713 41.8887C84.2442 41.0207 80.9531 40.5579 76.998 40.5H49.5V104.465H76.998Z" fill="white"/>

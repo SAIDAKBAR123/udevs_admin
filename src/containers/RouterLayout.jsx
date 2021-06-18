@@ -1,9 +1,9 @@
-import Layout from '../components/layout/index.jsx'
-import Navbar from '../components/navbar/index.jsx'
+import Layout from '../components/Layout/index.jsx'
+import Navbar from '../components/Navbar/index.jsx'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import dashboardRoutes from '../routes/dashboard-routes'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import  Breadcrumbs from '../components/breadcrumb/index.jsx'
+import  Breadcrumbs from '../components/Breadcrumb/index.jsx'
  
 export default function App() {
     let location = useLocation();
