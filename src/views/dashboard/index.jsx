@@ -1,12 +1,13 @@
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
+
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import BreadCrumb from '../../components/breadcrumb/index.jsx'
+import Wrapper from '../../components/Template/index.jsx'
 import './index.scss'
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -59,12 +60,7 @@ export default function App() {
     const classes = useStyles();
 
     return (
-        <div style={{ minHeight: '80vh' }} className="my-4 rounded bg-white p-5 shadow-lg font-body">
-            <div><BreadCrumb items={[{ title: 'Дашборд'}, {title: 'Клиенты'}, { title: 'Заказы'}]} /></div>
-            <hr></hr>
-            <div className="py-4 font-semibold text-xl rounded bg-white">Общий отчет</div>
-            <hr></hr>
-            <div className="py-4 font-semibold text-xl rounded bg-white"></div>
+        <Wrapper className="font-body" header="Общий отчет">
             <TableContainer elevation={0} component={Paper} className=" shadow-none rounded-xl">
                 <Table elevation={0} className={classes.table} aria-label="customized table">
                     <TableHead>
@@ -97,6 +93,7 @@ export default function App() {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+            {/* <Pagination count={10} /> */}
+        </Wrapper>
     )
 }

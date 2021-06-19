@@ -1,5 +1,4 @@
 import Layout from '../components/layout/index.jsx'
-import Navbar from '../components/navbar/index.jsx'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import dashboardRoutes from '../routes/dashboard-routes'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
@@ -20,20 +19,11 @@ export default function App() {
     ]
     return (
         <div>
-            <Navbar user={{ name: 'Inna ' }}/>
             <Layout sidebar={<Sidebar />}>
-                <div className="p-5">
-                    <TransitionGroup>
-                        <CSSTransition
-                            key={location.key}
-                            classNames="fade"
-                            timeout={100}
-                        >
-                            <Switch location={location}>
-                                {dashboardRoutes.map(el => <Route className="trnns-group" key={el.id} path={el.path} component={el.component} />)}
-                            </Switch>
-                        </CSSTransition>
-                    </TransitionGroup>
+                <div className="p-5 mx-2">
+                    <Switch location={location}>
+                        {dashboardRoutes.map(el => <Route className="trnns-group" key={el.id} path={el.path} component={el.component} />)}
+                    </Switch>
                 </div>
             </Layout>
         </div>
