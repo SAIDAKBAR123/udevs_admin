@@ -1,4 +1,4 @@
-import BreadCrumb from '../breadcrumb/index.jsx'
+import BreadCrumb from '../Breadcrumb/index.jsx'
 export default function App(props) {
     return (
         <div className="rounded bg-white white w-full p-3 font-body">

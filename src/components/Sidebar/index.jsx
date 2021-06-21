@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import config from '../../config/defaultSettings'
 import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import './index.scss'
   
@@ -51,15 +51,15 @@ const menu = [
         </svg>
         
     },
-    {
-        title: 'Выйти',
-        path: '/auth/login',
-        isActive: false,
-        icon: <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-    </svg>
+    // {
+    //     title: 'Выйти',
+    //     path: '/auth/login',
+    //     isActive: false,
+    //     icon: <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    //     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+    // </svg>
         
-    }
+    // }
 ]
 const list = [
     {
@@ -91,7 +91,7 @@ const list = [
     },
     {
         title: 'Jowi',
-        path: '/auth/login',
+        path: '/',
         isActive: false,
         icon: <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -109,12 +109,13 @@ export default function App () {
         history.push(path)
     }
     return (
-        <div className="flex h-screen">
-        <div className="font-body flex-column justify-between bg-gray-200 p-3 shadow-lg" style={{ borderRight: '1px solid #f0f3f8'}}>
-            <ul className="px-auto mb-3">
-                <img src={config.project.logo} alt="asdasd" className="rounded-full mx-auto w-10 h-10" />
+        <div className="flex h-screen h-full" style={{ height: '100%' }}>
+        <div className="font-body flex flex-col justify-between bg-gray-200 p-3 shadow-lg" style={{ borderRight: '1px solid #f0f3f8'}}>
+            <div>
+            <ul className="px-auto mb-3 flex" onClick={toggleSidebar}>
+                <img src={config.project.logo} alt="asdasd" className="rounded-full items-center mx-auto w-10 h-10" />
             </ul>
-            <ul className="space-y-2 text-sm dashboard_list">
+            <ul className="space-y-2 text-sm dashboard_list items-center">
                 {  
                     menu.map(el => <li key={el.title} onClick={() => linkTo(el.path)}>
                     <BootstrapTooltip title={el.title}>
@@ -129,8 +130,19 @@ export default function App () {
                 )
                 }
             </ul>
+            </div>
+            <div className="flex flex-col items-center space-y-5">
+                <ul className="space-y-2 items-end dashboard_list font-body">
+                    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.99956 20C9.09956 20 9.99956 19.1 9.99956 18H5.99956C5.99956 19.1 6.88956 20 7.99956 20ZM13.9996 14V9C13.9996 5.93 12.3596 3.36 9.49956 2.68V2C9.49956 1.17 8.82956 0.5 7.99956 0.5C7.16956 0.5 6.49956 1.17 6.49956 2V2.68C3.62956 3.36 1.99956 5.92 1.99956 9V14L0.709563 15.29C0.0795632 15.92 0.519563 17 1.40956 17H14.5796C15.4696 17 15.9196 15.92 15.2896 15.29L13.9996 14Z" fill="#6E8BB7"/>
+                    </svg>
+                </ul>
+                <ul className="space-y-2 items-end dashboard_list">
+                    <img className="rounded-full cursor-pointer w-10 h-10" src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/portrait-photography/CODERED_B1_portrait_photography-P4a_438x447.jpg.img.jpg" alt="iasdafsd"></img> 
+                </ul>
+            </div>
         </div>
-        <div className={`h-screen sidebar shadow-lg bg-white ${visible ? 'w-60 p-3' : 'p-0'}`} style={{ transition: 'all 0.5s', width: visible ? '': '0px'}}>
+        <div className={`h-screen sidebar shadow-lg bg-white w-60 p-3${visible ? '' : 'inset-0 transform -translate-y-full'}`} style={{ height: '100%', transition: 'all 0.5s', width: visible ? '': '0px'}}>
             <div className="flex justify-between items-center w-full px-3" >
                 <span className="items-center">
                     <h3 className="font-bold text-3xl text-gray-700 font-poppins tracking-wide">{config.project.title}</h3>
@@ -141,7 +153,7 @@ export default function App () {
                     </svg>
                 </span>
             </div>
-        <ul className="space-y-2 text-sm mt-5 dashboard_list font-body">
+            <ul className="space-y-2 text-sm mt-5 dashboard_list font-body">
                 {  
                     list.map(el => <li key={el.title} onClick={() => linkTo(el.path)}>
                         <span className={` flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-blue-50 focus:shadow-outline`}>
