@@ -2,12 +2,12 @@
 
 export default function App(props) {
     return (
-        <div className="flex flex-wrap bg-blue-100 w-full" style={{ minHeight: '100vh' }}>
-            <div className="w-2/12 h-full">
+        <div className="flex bg-blue-100" style={{ minHeight: '100vh' }}>
+            <div className="flex-none">
                 {props.sidebar}
             </div>
-            <div className="w-10/12">
-                <div className="p-0 text-gray-500">
+            <div className="flex-grow">
+                <div style={{ minHeight: '84vh' }}>
                     {props.children}
                 </div>
             </div>

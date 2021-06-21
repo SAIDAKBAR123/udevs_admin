@@ -1,8 +1,8 @@
 import axios from 'axios'
-
+import config from '../config/defaultSettings'
 // axios new instance
 const request = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: config.baseURL,
   timeout: 8000
 })
 
