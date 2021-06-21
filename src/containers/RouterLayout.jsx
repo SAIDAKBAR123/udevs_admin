@@ -1,4 +1,4 @@
-import Layout from '../components/layout/index.jsx'
+import Layout from '../components/Layout/index.jsx'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import dashboardRoutes from '../routes/dashboard-routes'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
@@ -6,17 +6,6 @@ import Sidebar from '../components/Sidebar/index.jsx'
 
 export default function App() {
     let location = useLocation();
-    const list = [
-        {
-            title: 'Dashboard'
-        },
-        {
-            title: 'users'
-        },
-        {
-            title: 'Sections'
-        }
-    ]
     return (
         <div>
             <Layout sidebar={<Sidebar />}>

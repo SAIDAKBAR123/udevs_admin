@@ -1,3 +1,12 @@
+const config = {
+  primary: '#524894',
+  warning: '',
+  danger: '',
+  success: '',
+  dark: '',
+  info: '',
+  loading: ''
+}
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
@@ -11,8 +20,13 @@ module.exports = {
     },
     // custom-needed
     color: {
+      primary: {
+        light: '',
+        DEFAULT: config.primary,
+        dark: ''
+      },
       transparent: 'transparent',
-      current: 'currentColor',
+      current: config.primary,
       black: 'rgba(0, 0, 0, 1)',
       darkgrey: 'rgba(26, 32, 36, 1)',
       white: 'rgba(246, 248, 249, 1)',
