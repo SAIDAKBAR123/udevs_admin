@@ -6,7 +6,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import BreadCrumb from '../../components/breadcrumb/index.jsx'
+import BreadCrumb from '../../components/Breadcrumb/index.jsx'
 import './index.scss'
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -59,7 +59,7 @@ export default function App() {
     const classes = useStyles();
 
     return (
-        <div style={{ minHeight: '80vh' }} className="my-4 rounded bg-white p-5 shadow-lg font-body">
+        <div style={{ minHeight: '80vh' }} className=" rounded bg-white p-5 shadow-lg font-body">
             <div><BreadCrumb items={[{ title: 'Дашборд'}, {title: 'Клиенты'}, { title: 'Заказы'}]} /></div>
             <hr></hr>
             <div className="py-4 font-semibold text-xl rounded bg-white">Общий отчет</div>
