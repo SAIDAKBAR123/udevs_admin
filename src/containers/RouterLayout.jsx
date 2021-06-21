@@ -6,17 +6,6 @@ import Sidebar from '../components/Sidebar/index.jsx'
 
 export default function App() {
     let location = useLocation();
-    const list = [
-        {
-            title: 'Dashboard'
-        },
-        {
-            title: 'users'
-        },
-        {
-            title: 'Sections'
-        }
-    ]
     return (
         <div>
             <Layout sidebar={<Sidebar />}>
