@@ -1,7 +1,7 @@
 import Dashboard from "../views/dashboard/index.jsx";
 import Profile from "../views/profiles/index.jsx";
 import UiComponents from '../views/ui-components/index.jsx'
-import Accordions from '../views/Accordions/Accordions'
+import Accordions from '../views/accordions/Accordions'
 
 export default [
   {
