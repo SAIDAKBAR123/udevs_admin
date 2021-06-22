@@ -63,7 +63,7 @@ export default function Accordion (props) {
                 </span>
                 {RenderSummary(summary)}
             </div>
-            <div className={`${expand ? 'h-auto ' + setSize(size) : 'h-0'} overflow-hidden transition duration-300 ease-in-out`}>
+            <div style={{ transition: 'all .2s'}} className={`${expand ? 'h-auto ' + setSize(size) : 'h-0'} overflow-hidden transform transition duration-300 ease-in-out`}>
                 {RenderDetails(details)}
             </div>
         </div>

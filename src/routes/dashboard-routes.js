@@ -10,7 +10,6 @@ export default [
     path: "/dashboard",
     exact: true,
     title: "Dashboard",
-    showSidepanel: true,
     permission: "",
     children: []
   },
@@ -27,10 +26,9 @@ export default [
   {
     id: 13,
     component: UiComponents,
-    path: "/clients",
+    path: "/table",
     exact: true,
     title: "UI component",
-    showSidepanel: true,
     permission: "",
     children: []
   },
@@ -40,7 +38,6 @@ export default [
     path: "/profile",
     exact: true,
     title: "Profile",
-    showSidepanel: true,
     permission: "",
     children: []
   },

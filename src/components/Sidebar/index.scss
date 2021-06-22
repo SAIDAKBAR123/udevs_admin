@@ -17,3 +17,12 @@ font-weight: 500;
 .is-active-sidebar .active-sidebar{
     background: var(--color-primary);
 }
+
+.is-active-profile {
+    background-color: red;
+}
+
+.is-active-profile path{
+    fill: rgba(64, 148, 247, 1);;
+    padding: 11px;
+}
