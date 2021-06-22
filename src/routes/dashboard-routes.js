@@ -1,6 +1,7 @@
 import Dashboard from "../views/dashboard/index.jsx";
 import Profile from "../views/profiles/index.jsx";
 import UiComponents from '../views/ui-components/index.jsx'
+import Accordions from '../views/Accordions/Accordions'
 
 export default [
   {
@@ -9,6 +10,16 @@ export default [
     path: "/dashboard",
     exact: true,
     title: "Dashboard",
+    permission: "",
+    children: []
+  },
+  {
+    id: 3,
+    component: Accordions,
+    path: "/accordion",
+    exact: true,
+    title: "Accordion",
+    showSidepanel: false,
     permission: "",
     children: []
   },
@@ -29,5 +40,5 @@ export default [
     title: "Profile",
     permission: "",
     children: []
-  }
+  },
 ].map((route) => ({ ...route, path: `/home${route.path}` }));
