@@ -15,7 +15,7 @@ export default [
   {
     id: 13,
     component: UiComponents,
-    path: "/clients",
+    path: "/table",
     exact: true,
     title: "UI component",
     permission: "",
