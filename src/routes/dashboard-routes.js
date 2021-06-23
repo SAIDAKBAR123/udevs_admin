@@ -2,6 +2,7 @@ import Dashboard from "../views/dashboard/index.jsx";
 import Profile from "../views/profiles/index.jsx";
 import UiComponents from '../views/ui-components/index.jsx'
 import Accordions from '../views/accordions/Accordions'
+import Avatars from "../views/avatars/Avatars"
 
 export default [
   {
@@ -19,6 +20,16 @@ export default [
     path: "/accordion",
     exact: true,
     title: "Accordion",
+    showSidepanel: false,
+    permission: "",
+    children: []
+  },
+  {
+    id: 4,
+    component: Avatars,
+    path: "/avatars",
+    exact: true,
+    title: "Avatar",
     showSidepanel: false,
     permission: "",
     children: []
