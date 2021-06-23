@@ -9,7 +9,7 @@ export default function App() {
     return (
         <div>
             <Layout sidebar={<Sidebar />}>
-                <div className="p-5 mx-2">
+                <div className="">
                     <Switch location={location}>
                         {dashboardRoutes.map(el => <Route className="trnns-group" key={el.id} path={el.path} component={el.component} />)}
                     </Switch>

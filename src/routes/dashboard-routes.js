@@ -3,6 +3,8 @@ import Profile from "../views/profiles/index.jsx";
 import UiComponents from '../views/ui-components/index.jsx'
 import Accordions from '../views/Accordions/Accordions'
 import Buttons from '../views/buttons/index'
+import Cards from '../views/cards/index'
+import TableOrder from '../views/tableOrder/index'
 
 export default [
   {
@@ -15,7 +17,7 @@ export default [
     children: []
   },
   {
-    id: 3,
+    id: 365,
     component: Accordions,
     path: "/accordion",
     exact: true,
@@ -25,11 +27,31 @@ export default [
     children: []
   },
   {
-    id: 3,
+    id: 343,
     component: Buttons,
     path: "/buttons",
     exact: true,
     title: "Button",
+    showSidepanel: false,
+    permission: "",
+    children: []
+  },
+  {
+    id: 3654,
+    component: Cards,
+    path: "/cards",
+    exact: true,
+    title: "Cards",
+    showSidepanel: false,
+    permission: "",
+    children: []
+  },
+  {
+    id: 34,
+    component: TableOrder,
+    path: "/table-ui",
+    exact: true,
+    title: "Table ui",
     showSidepanel: false,
     permission: "",
     children: []
