@@ -4,9 +4,11 @@ export default function Accordion (props) {
     const {
         id,
         width,
+        style,
         border,
-        expanded,
         weight,
+        expanded,
+        className,
         summary = '',
         details = '',
         filled = false,
@@ -34,16 +36,17 @@ export default function Accordion (props) {
 
     return (
         <div
-            style={{ width }}
+            style={{ width, ...style }}
             className={`
                 w-full
                 relative
                 overflow-hidden
                 ${filled ? 'border border-indigo-200' : ''}
                 ${setBorder(border)}
+                ${className}
             `}
         >
-            <div className={disabled ? "absolute inset-0 z-10 bg-white opacity-70 cursor-not-allowed": 'invisible'} />
+            <div className={disabled ? "absolute inset-0 z-10 bg-white opacity-70 cursor-not-allowed" : 'invisible'} />
             <div
                 onClick={onExpanded}
                 className={`

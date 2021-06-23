@@ -1,12 +1,12 @@
 import { useState } from "react"
-import Accordion from "../../components/Accordion"
-import Wrapper from '../../components/Template/index.jsx'
+import Accordion from "../../components/Accordion/index"
+import Wrapper from "../../components/Template/index"
 
-export default function Accordions() {
+export default function Accordions () {
   const [expand, setExpand] = useState(true)
 
   return (
-    <Wrapper className="font-body" header="Accordion list">
+    <Wrapper>
       <div className="bg-white h-full rounded">
 
         {/* ************ FILLED ************ */}
@@ -28,7 +28,7 @@ export default function Accordions() {
             <Accordion
               id="medium"
               filled
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
@@ -36,8 +36,8 @@ export default function Accordions() {
           </div>
           <div className="w-1/3 p-2">
             <h2>Large</h2>
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               filled
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
@@ -60,15 +60,15 @@ export default function Accordions() {
               id="medium"
               filled
               border="bottom"
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
             />
           </div>
           <div className="w-1/3 p-2">
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               filled
               border="both"
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
@@ -92,15 +92,15 @@ export default function Accordions() {
               id="medium"
               filled
               disabled
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
             />
           </div>
           <div className="w-1/3 p-2">
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               filled
               disabled
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
@@ -123,15 +123,15 @@ export default function Accordions() {
               id="medium"
               filled
               weight="bolder"
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
             />
           </div>
           <div className="w-1/3 p-2">
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               filled
               weight="bold"
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
@@ -153,15 +153,15 @@ export default function Accordions() {
           <div className="w-1/3 p-2">
             <Accordion
               id="medium"
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
             />
           </div>
           <div className="w-1/3 p-2">
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
             />
@@ -181,15 +181,15 @@ export default function Accordions() {
             <Accordion
               id="medium"
               border="bottom"
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
             />
           </div>
           <div className="w-1/3 p-2">
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               border="both"
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
@@ -210,15 +210,15 @@ export default function Accordions() {
             <Accordion
               id="medium"
               disabled
-              size="medium"
+              size="medium" 
               summary="Accordion"
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
               onChange={(val, key) => console.log(val, key)}
             />
           </div>
           <div className="w-1/3 p-2">
-            <Accordion
-              size="large"
+            <Accordion 
+              size="large" 
               disabled
               summary={<><span>Accor</span><span className="ml-4">Dion</span></>}
               details="Lorem ipsum dolor sit amet consectetur adipisicing."
