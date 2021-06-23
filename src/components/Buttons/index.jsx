@@ -16,13 +16,14 @@ export default function Button (props) {
     const { 
         children,
         icon = '',
+        color= "text-gray-900",
         loading = false,
         shape = 'filled',
         position = 'left',
         size = 'medium',
         ...rest 
     } = props
-
+    console.log(children)
     const getSize = (key) => {
         switch (key) {
             case 'small':
@@ -32,7 +33,7 @@ export default function Button (props) {
                 }
             case 'medium':
                 return {
-                    size: 'px-4 py-2',
+                    size: 'px-3 py-1 min:w-7 min:h-7',
                     fontSize: 'text-sm'
                 }
             case 'large':
@@ -50,11 +51,11 @@ export default function Button (props) {
         console.log(key)
         switch (key) {
             case 'filled':
-                return { color: 'bg-blue-500 iconColor-filled hover:bg-blue-600' }
+                return { color: color + ' iconColor-filled hover:bg-blue-600' }
             case 'outlined':
-                return { color: 'bg-white iconColor-outlined text-gray-900  border hover:bg-gray-200' }
+                return { color: color + ' bg-white iconColor-outlined text-gray-900  border hover:bg-gray-200' }
             case 'text':
-                return { color: 'bg-white iconColor-text text-gray-900 hover:bg-gray-200' }
+                return { color: ' bg-transparent iconColor-text ' + color }
         
             default:
                 return { color: 'iconColor-filled'};
@@ -69,20 +70,16 @@ export default function Button (props) {
                         rounded-lg
                         focus:outline-none
                         transition
+                        ${ children ? '' : 'w-9 h-9' }
                         focus:ring focus:border-blue-300 
                         ${getSize(size).size}
                         ${props.disabled ? 'bg-gray-200 cursor-not-allowed' : getShape(shape).color}
                         text-white`
                     } 
                     { ...rest}>
-                        <div className="flex justify-around items-center space-x-1">
-                            {
-                                !loading ? <><div>{icon}</div>
-                                <div className={getSize(size).fontSize}>{ children }</div></> : 
-                                <div className={classes.root}>
-                                <LinearProgress />
-                                </div>
-                            }
+                        <div className={`flex justify-around items-center ${children ? 'space-x-2' : ''} font-medium font-semibold`}>
+                                <div>{icon}</div>
+                                <div className={getSize(size).fontSize}>{ children }</div>
                         </div>
                     </button>
             </div>

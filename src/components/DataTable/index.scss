@@ -1,5 +1,9 @@
 #table-react tr:hover {background-color: #ddd;}
-
+.stick-head {
+    position: sticky;
+    left: 0; 
+    background: white;
+}
 #table-react {
     border-radius: 6px;
     border-collapse: collapse;
@@ -39,4 +43,9 @@
         padding-top: 12px;
         padding-bottom: 12px;
     }
+  }
+
+  .MuiTableCell-stickyHeader {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
