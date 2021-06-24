@@ -48,22 +48,22 @@ function setPosition (position, overlap) {
   if(x === "left" && y === "top") 
     return {
       positionClass: 'top-0 left-0',
-      positionStyle: {transform: overlap === 'square' ? 'translate(-50%, -50%)' : 'translate(-40%, -10%)'}
+      positionStyle: {transform: overlap === 'square' ? 'translate(-50%, -50%)' : 'translate(-25%, -25%)'}
     }
   if(x === "left" && y === "bottom") 
     return {
       positionClass: 'bottom-0 left-0',
-      positionStyle: {transform: overlap === 'square' ? 'translate(-50%, 50%)' : 'translate(-40%, 10%)'}
+      positionStyle: {transform: overlap === 'square' ? 'translate(-50%, 50%)' : 'translate(-25%, 25%)'}
     }
   if(x === "right" && y === "bottom") 
     return {
       positionClass: 'bottom-0 right-0',
-      positionStyle: {transform: overlap === 'square' ? 'translate(50%, 50%)' : 'translate(40%, 10%)'}
+      positionStyle: {transform: overlap === 'square' ? 'translate(50%, 50%)' : 'translate(25%, 25%)'}
     }
 
   return {
     positionClass: 'top-0 right-0',
-    positionStyle: {transform: overlap === 'square' ? 'translate(50%, -50%)' : 'translate(40%, -10%)'}
+    positionStyle: {transform: overlap === 'square' ? 'translate(50%, -50%)' : 'translate(25%, -25%)'}
   }
 }
 

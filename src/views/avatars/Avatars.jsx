@@ -15,13 +15,13 @@ export default function Avatars () {
             >N</Avatar>
             <Avatar className="ml-1">WW</Avatar>
             <Avatar className="ml-1" weight="subtle">W</Avatar>
-            <Badge  className="ml-1">
-              <Avatar>WW</Avatar>
-            </Badge>
             <Badge  className="ml-1" badgeContent={8}>
               <Avatar>WW</Avatar>
             </Badge>
             <Badge  className="ml-1" badgeContent={15} max={10}>
+              <Avatar>WW</Avatar>
+            </Badge>
+            <Badge  className="ml-1">
               <Avatar>WW</Avatar>
             </Badge>
             <Badge  className="ml-1" anchorOrigin={{y: 'bottom', x: 'right'}} color="green">
@@ -42,13 +42,13 @@ export default function Avatars () {
             >N</Avatar>
             <Avatar className="ml-1" variant="rounded">WW</Avatar>
             <Avatar className="ml-1" variant="rounded" weight="subtle">W</Avatar>
-            <Badge overlap='square' className="ml-1">
-              <Avatar variant="rounded">WW</Avatar>
-            </Badge>
             <Badge overlap='square' className="ml-1" badgeContent={8}>
               <Avatar variant="rounded">WW</Avatar>
             </Badge>
             <Badge overlap='square' className="ml-1" badgeContent={15} max={10}>
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-1">
               <Avatar variant="rounded">WW</Avatar>
             </Badge>
             <Badge overlap='square' className="ml-1" anchorOrigin={{y: 'bottom', x: 'right'}} color="green">
@@ -69,13 +69,13 @@ export default function Avatars () {
             >N</Avatar>
             <Avatar className="ml-1" variant="square">WW</Avatar>
             <Avatar className="ml-1" variant="square" weight="subtle">W</Avatar>
-            <Badge overlap='square' className="ml-1">
-              <Avatar variant="square">WW</Avatar>
-            </Badge>
             <Badge overlap='square' className="ml-1" badgeContent={8}>
               <Avatar variant="square">WW</Avatar>
             </Badge>
             <Badge overlap='square' className="ml-1" badgeContent={15} max={10}>
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-1">
               <Avatar variant="square">WW</Avatar>
             </Badge>
             <Badge overlap='square' className="ml-1" anchorOrigin={{y: 'bottom', x: 'right'}} color="green">
