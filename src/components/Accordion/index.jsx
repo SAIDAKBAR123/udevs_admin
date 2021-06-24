@@ -1,22 +1,20 @@
 import { useState, useEffect } from "react"
 
-export default function Accordion (props) {
-    const {
-        id,
-        width,
-        style,
-        border,
-        weight,
-        expanded,
-        className,
-        summary = '',
-        details = '',
-        filled = false,
-        disabled = false,
-        size = 'medium',
-        onChange = function() {}
-        // children
-    } = props
+export default function Accordion ({
+    id,
+    width,
+    style,
+    border,
+    weight,
+    expanded,
+    className,
+    summary = '',
+    details = '',
+    filled = false,
+    disabled = false,
+    size = 'medium',
+    onChange = function() {}
+}) {
 
     // **** USE-HOOKS ****
     const [expand, setExpand] = useState(expanded)
@@ -41,7 +39,7 @@ export default function Accordion (props) {
                 w-full
                 relative
                 overflow-hidden
-                ${filled ? 'border border-indigo-200' : ''}
+                ${filled ? 'border border-blue-200' : ''}
                 ${setBorder(border)}
                 ${className}
             `}
@@ -53,7 +51,7 @@ export default function Accordion (props) {
                     flex
                     cursor-pointer
                     items-center
-                    border-indigo-200
+                    border-blue-200
                     ${filled ? setWeight(weight) : ''}
                     ${expand && filled ? 'border-b' : ''}
                     ${setSize(size)}
@@ -102,11 +100,11 @@ function setBorder (borderType) {
 function setWeight (weight) {
     switch (weight) {
         case 'bold':
-            return 'bg-indigo-200'
+            return 'bg-blue-200'
         case 'bolder':
-            return 'bg-indigo-100'
+            return 'bg-blue-100'
         default:
-            return 'bg-indigo-50'
+            return 'bg-blue-50'
     }
 }
 

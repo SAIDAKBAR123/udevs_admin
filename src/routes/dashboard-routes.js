@@ -20,7 +20,7 @@ export default [
   {
     id: 365,
     component: Accordions,
-    path: "/accordion",
+    path: "/dashboard/accordion",
     exact: true,
     title: "Accordiond",
     showSidepanel: false,
@@ -30,7 +30,7 @@ export default [
   {
     id: 343,
     component: Buttons,
-    path: "/buttons",
+    path: "/dashboard/buttons",
     exact: true,
     title: "Button",
     showSidepanel: false,
@@ -40,7 +40,7 @@ export default [
   {
     id: 3654,
     component: Cards,
-    path: "/cards",
+    path: "/dashboard/cards",
     exact: true,
     title: "Cards",
     showSidepanel: false,
@@ -61,7 +61,7 @@ export default [
 
     id: 4,
     component: Avatars,
-    path: "/avatars",
+    path: "/dashboard/avatars",
     exact: true,
     title: "Avatar",
     showSidepanel: false,

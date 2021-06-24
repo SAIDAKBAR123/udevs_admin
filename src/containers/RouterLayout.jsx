@@ -11,7 +11,7 @@ export default function App() {
             <Layout sidebar={<Sidebar />}>
                 <div className="">
                     <Switch location={location}>
-                        {dashboardRoutes.map(el => <Route className="trnns-group" key={el.id} path={el.path} component={el.component} />)}
+                        {dashboardRoutes.map(el => <Route className="trnns-group" key={el.id} path={el.path} exact={el.exact} component={el.component} />)}
                     </Switch>
                 </div>
             </Layout>

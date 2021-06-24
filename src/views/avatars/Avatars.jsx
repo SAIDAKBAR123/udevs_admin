@@ -1,5 +1,6 @@
 import Avatar from "../../components/Avatar/Index"
 import Wrapper from "../../components/Template/index"
+import Badge from "../../components/Badge/Index"
 
 export default function Avatars () {
   return (
@@ -14,6 +15,24 @@ export default function Avatars () {
             >N</Avatar>
             <Avatar className="ml-1">WW</Avatar>
             <Avatar className="ml-1" weight="subtle">W</Avatar>
+            <Badge overlap='circle'  className="ml-1" badgeContent={8}>
+              <Avatar>WW</Avatar>
+            </Badge>
+            <Badge overlap='circle'  className="ml-1" badgeContent={15} max={10}>
+              <Avatar>WW</Avatar>
+            </Badge>
+            <Badge overlap='circle'  className="ml-1">
+              <Avatar>WW</Avatar>
+            </Badge>
+            <Badge overlap='circle'  className="ml-1" anchorOrigin={{y: 'bottom', x: 'right'}} color="green">
+              <Avatar>WW</Avatar>
+            </Badge>
+            <Badge overlap='circle'  className="ml-1" anchorOrigin={{y: 'top', x: 'left'}} color="yellow">
+              <Avatar>WW</Avatar>
+            </Badge>
+            <Badge overlap='circle'  className="ml-1" anchorOrigin={{y: 'bottom', x: 'left'}} color="blue">
+              <Avatar>WW</Avatar>
+            </Badge>
           </div>
 
           <div className="w-1/3 p-2">
@@ -21,8 +40,26 @@ export default function Avatars () {
             <Avatar variant="rounded"
               src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
             >N</Avatar>
-            <Avatar className="ml-1" variant="rounded">WW</Avatar>
-            <Avatar className="ml-1" variant="rounded" weight="subtle">W</Avatar>
+            <Avatar className="ml-2" variant="rounded">WW</Avatar>
+            <Avatar className="ml-2" variant="rounded" weight="subtle">W</Avatar>
+            <Badge overlap='square' className="ml-2" badgeContent={8}>
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" badgeContent={15} max={10}>
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2">
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" anchorOrigin={{y: 'bottom', x: 'right'}} color="green">
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" anchorOrigin={{y: 'top', x: 'left'}} color="yellow">
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" anchorOrigin={{y: 'bottom', x: 'left'}} color="blue">
+              <Avatar variant="rounded">WW</Avatar>
+            </Badge>
           </div>
 
           <div className="w-1/3 p-2">
@@ -30,8 +67,26 @@ export default function Avatars () {
             <Avatar variant="square"
               src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
             >N</Avatar>
-            <Avatar className="ml-1" variant="square">WW</Avatar>
-            <Avatar className="ml-1" variant="square" weight="subtle">W</Avatar>
+            <Avatar className="ml-2" variant="square">WW</Avatar>
+            <Avatar className="ml-2" variant="square" weight="subtle">W</Avatar>
+            <Badge overlap='square' className="ml-2" badgeContent={8}>
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" badgeContent={15} max={10}>
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2">
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" anchorOrigin={{y: 'bottom', x: 'right'}} color="green">
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" anchorOrigin={{y: 'top', x: 'left'}} color="yellow">
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
+            <Badge overlap='square' className="ml-2" anchorOrigin={{y: 'bottom', x: 'left'}} color="blue">
+              <Avatar variant="square">WW</Avatar>
+            </Badge>
           </div>
         </div>
 
