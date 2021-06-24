@@ -1,7 +1,10 @@
 import Dashboard from "../views/dashboard/index.jsx";
 import Profile from "../views/profiles/index.jsx";
 import UiComponents from '../views/ui-components/index.jsx'
-import Accordions from '../views/accordions/Accordions'
+import Accordions from '../views/accordions/Accordions.jsx'
+import Buttons from '../views/buttons/index'
+import Cards from '../views/cards/index'
+import TableOrder from '../views/tableOrder/index'
 import Avatars from "../views/avatars/Avatars"
 
 export default [
@@ -15,16 +18,47 @@ export default [
     children: []
   },
   {
-    id: 3,
+    id: 365,
     component: Accordions,
     path: "/accordion",
     exact: true,
-    title: "Accordion",
+    title: "Accordiond",
     showSidepanel: false,
     permission: "",
     children: []
   },
   {
+    id: 343,
+    component: Buttons,
+    path: "/buttons",
+    exact: true,
+    title: "Button",
+    showSidepanel: false,
+    permission: "",
+    children: []
+  },
+  {
+    id: 3654,
+    component: Cards,
+    path: "/cards",
+    exact: true,
+    title: "Cards",
+    showSidepanel: false,
+    permission: "",
+    children: []
+  },
+  {
+    id: 34,
+    component: TableOrder,
+    path: "/table-ui",
+    exact: true,
+    title: "Table ui",
+    showSidepanel: false,
+    permission: "",
+    children: []
+  },
+  {
+
     id: 4,
     component: Avatars,
     path: "/avatars",

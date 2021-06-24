@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Accordion from "../../components/Accordion"
+import Accordion from "../../components/Accordion/index"
 import Wrapper from "../../components/Template/index"
 
 export default function Accordions () {
