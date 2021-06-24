@@ -131,7 +131,7 @@ export default function CustomizedMenus(props) {
                 open={Boolean(anchorEl)}
                 onClose={() => setAnchorEl(null)}
             >
-                <div className="rounded w-full h-28 bg-green-100"></div>
+                <div className="rounded w-full h-28 bg-green-100 animate-pulse"></div>
                 <div className="m-2 h-full flex items-end">
                     <Button
                         icon={plusIcon}
