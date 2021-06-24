@@ -81,7 +81,7 @@ export default function App() {
                 {items.map(el => (
                     <li key={el.title}>
                         <NavLink activeClassName='is-active' onClick={() => linkTo(el)} to={el.path}>
-                            <span className={`spanITem flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-blue-50 focus:shadow-outline`}>
+                            <span className={`spanITem flex items-center space-x-3 text-gray-700 p-3 hover:text-white rounded-md font-medium hover:bg-secondary focus:shadow-outline`}>
                                 <span>{el.title}</span>
                             </span>
                         </NavLink>
@@ -118,7 +118,7 @@ export default function App() {
                 </div>
                 <div className="flex flex-col items-center space-y-5">
                     <ul
-                        className="space-y-2 items-end dashboard_list font-body transition ease-in-out transform hover:rotate-12 cursor-pointer">
+                        className="space-y-2 items-end dashboard_list font-body transition hover:text-white ease-in-out transform hover:rotate-12 cursor-pointer">
                         <NavLink activeClassName='is-active-profile' to="/home/profile">
                             <Badge badgeContent={12} max={10}>
                                 <svg width="16" className="profile-icon" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -100,11 +100,11 @@ function setBorder (borderType) {
 function setWeight (weight) {
     switch (weight) {
         case 'bold':
-            return 'bg-blue-200'
+            return 'bg-primary'
         case 'bolder':
-            return 'bg-blue-100'
+            return 'bg-primary'
         default:
-            return 'bg-blue-50'
+            return 'bg-primary'
     }
 }
 

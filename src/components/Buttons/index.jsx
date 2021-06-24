@@ -51,9 +51,9 @@ export default function Button (props) {
         console.log(key)
         switch (key) {
             case 'filled':
-                return { color: color + ' iconColor-filled hover:bg-blue-600' }
+                return { color: color + ' iconColor-filled hover:bg-secondary' }
             case 'outlined':
-                return { color: color + ' bg-white iconColor-outlined text-gray-900  border hover:bg-gray-200' }
+                return { color: color + ' bg-white iconColor-outlined text-gray-900  border hover:bg-secondary' }
             case 'text':
                 return { color: ' bg-transparent iconColor-text ' + color }
         

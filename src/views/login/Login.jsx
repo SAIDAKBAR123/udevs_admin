@@ -26,14 +26,14 @@ export default function App () {
                     </defs>
                     </svg>
             </div>
-            <div className="w-6/12 h-screen bg-blue-100 justify-around items-center flex flex-col shadow ">
+            <div className="w-6/12 h-screen bg-background justify-around items-center flex flex-col shadow ">
                 <div className="w-3/4 mt-24 rounded-2xl shadow-lg bg-white h-6/12 p-3">
                     <div className="text-3xl font-semibold p-4">Войти в систему</div>
                     <hr></hr>
                     <div className="flex flex-col p-6 font-semibold space-y-6">
                         <div className="flex flex-col space-y-2">
                             <label>Имя пользователья</label>
-                            <span className="flex items-center space-x-2 p-3 bg-blue-100 rounded-lg">
+                            <span className="flex items-center space-x-2 p-3 bg-background_2 rounded-lg">
                                 <span>
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M19.3333 10.0001C19.3333 12.4754 18.35 14.8494 16.5996 16.5997C14.8493 18.3501 12.4753 19.3334 9.99996 19.3334C7.5246 19.3334 5.15064 18.3501 3.4003 16.5997C1.64996 14.8494 0.666626 12.4754 0.666626 10.0001C0.666626 7.52473 1.64996 5.15076 3.4003 3.40042C5.15064 1.65008 7.5246 0.666748 9.99996 0.666748C12.4753 0.666748 14.8493 1.65008 16.5996 3.40042C18.35 5.15076 19.3333 7.52473 19.3333 10.0001ZM12.3333 6.50008C12.3333 7.11892 12.0875 7.71241 11.6499 8.15C11.2123 8.58758 10.6188 8.83341 9.99996 8.83341C9.38112 8.83341 8.78763 8.58758 8.35004 8.15C7.91246 7.71241 7.66663 7.11892 7.66663 6.50008C7.66663 5.88124 7.91246 5.28775 8.35004 4.85016C8.78763 4.41258 9.38112 4.16675 9.99996 4.16675C10.6188 4.16675 11.2123 4.41258 11.6499 4.85016C12.0875 5.28775 12.3333 5.88124 12.3333 6.50008ZM9.99996 11.1667C8.88299 11.1665 7.78945 11.487 6.84928 12.09C5.90911 12.6931 5.16184 13.5534 4.69629 14.5687C5.35275 15.3324 6.16661 15.9451 7.08206 16.3648C7.99751 16.7845 8.9929 17.0012 9.99996 17.0001C11.007 17.0012 12.0024 16.7845 12.9179 16.3648C13.8333 15.9451 14.6472 15.3324 15.3036 14.5687C14.8381 13.5534 14.0908 12.6931 13.1506 12.09C12.2105 11.487 11.1169 11.1665 9.99996 11.1667Z" fill="#6E8BB7"/>
@@ -44,7 +44,7 @@ export default function App () {
                         </div>
                         <div className="flex flex-col space-y-2">
                             <label>Пароль</label>
-                            <span className="items-center space-x-2 p-3 bg-blue-100 rounded-lg flex">
+                            <span className="items-center space-x-2 p-3 bg-background_2 rounded-lg flex">
                                 <span>
                                     <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 7H13V5C13 2.24 10.76 0 8 0C5.24 0 3 2.24 3 5V7H2C0.9 7 0 7.9 0 9V19C0 20.1 0.9 21 2 21H14C15.1 21 16 20.1 16 19V9C16 7.9 15.1 7 14 7ZM8 16C6.9 16 6 15.1 6 14C6 12.9 6.9 12 8 12C9.1 12 10 12.9 10 14C10 15.1 9.1 16 8 16ZM5 7V5C5 3.34 6.34 2 8 2C9.66 2 11 3.34 11 5V7H5Z" fill="#6E8BB7"/>
@@ -56,7 +56,7 @@ export default function App () {
                     </div>
                     <hr></hr>
                     <div className="p-6">
-                        <button onClick={() => history.push('/')} type="button" className="w-full rounded-lg bg-blue-500 p-3 text-white font-semibold">Войти</button>
+                        <button onClick={() => history.push('/')} type="button" className="w-full focus:outline-none focus:ring rounded-lg bg-primary p-3 text-white font-semibold">Войти</button>
                     </div>
                 </div>
                 <div className="rounded rounded-xl  h-21 w-3/4 p-5 bg-white flex justify-between items-center shadow-lg">
