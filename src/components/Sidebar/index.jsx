@@ -132,7 +132,7 @@ export default function App() {
                     </ul>
                 </div>
             </div>
-            <div className={`h-screen sidebar bg-white w-60 p-3 ${visible ? '' : 'inset-0 transform -translate-x-4 overflow-hidden'}`} style={{
+            <div className={`h-screen sidebar bg-white w-60 ${visible ? 'p-3' : 'inset-0 transform -translate-x-4 overflow-hidden'}`} style={{
                 height: '100%',
                 marginLeft: 72,
                 transition: 'all 0.3s',
