@@ -32,7 +32,7 @@ code {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 /* Track */
@@ -42,13 +42,13 @@ code {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background: #888; 
+  border-radius: 4px;
+  background: rgba(107, 179, 250, 1); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgb(42, 117, 192); 
 }
  input {
    outline: 0;
@@ -58,6 +58,5 @@ code {
  }
 
  input:focus {
-   outline: red;
    opacity: 0.7;
  }

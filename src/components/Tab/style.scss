@@ -1,0 +1,14 @@
+.MuiTab-wrapper {
+    text-transform: none;
+    font-family: 'Inter';
+    font-weight: 600;
+    outline: none;
+}
+.MuiButtonBase-root:focus {
+    outline: 0;
+}
+.MuiPaper-root {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: none;
+}
