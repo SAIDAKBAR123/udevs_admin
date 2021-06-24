@@ -1,20 +1,16 @@
-import { useEffect } from 'react'
 
-export default function Badge (props) {
-  const {
-    style,
-    children,
-    max = 100,
-    overlap = 'circle',
-    color = 'red',
-    badgeContent,
-    className,
-    anchorOrigin = {}
-  } = props
 
-  // useEffect(() => {
-  //   console.log(children)
-  // }, [])
+export default function Badge ({
+  style,
+  children,
+  max = 100,
+  className,
+  badgeContent,
+  color = 'red',
+  overlap = 'square',
+  anchorOrigin = {}
+}) {
+
   const { positionClass, positionStyle } = setPosition(anchorOrigin, overlap)
 
   return (
@@ -48,22 +44,22 @@ function setPosition (position, overlap) {
   if(x === "left" && y === "top") 
     return {
       positionClass: 'top-0 left-0',
-      positionStyle: {transform: overlap === 'square' ? 'translate(-50%, -50%)' : 'translate(-25%, -25%)'}
+      positionStyle: {transform: overlap === 'circle' ? 'translate(-25%, -25%)' : 'translate(-50%, -50%)' }
     }
   if(x === "left" && y === "bottom") 
     return {
       positionClass: 'bottom-0 left-0',
-      positionStyle: {transform: overlap === 'square' ? 'translate(-50%, 50%)' : 'translate(-25%, 25%)'}
+      positionStyle: {transform: overlap === 'circle' ? 'translate(-25%, 25%)' : 'translate(-50%, 50%)' }
     }
   if(x === "right" && y === "bottom") 
     return {
       positionClass: 'bottom-0 right-0',
-      positionStyle: {transform: overlap === 'square' ? 'translate(50%, 50%)' : 'translate(25%, 25%)'}
+      positionStyle: {transform: overlap === 'circle' ? 'translate(25%, 25%)' : 'translate(50%, 50%)' }
     }
 
   return {
     positionClass: 'top-0 right-0',
-    positionStyle: {transform: overlap === 'square' ? 'translate(50%, -50%)' : 'translate(25%, -25%)'}
+    positionStyle: {transform: overlap === 'circle' ? 'translate(25%, -25%)' : 'translate(50%, -50%)' }
   }
 }
 

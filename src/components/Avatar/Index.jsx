@@ -1,17 +1,16 @@
 import { useState } from "react"
 
-export default function Avatar (props) {
-  const {
-    src,
-    alt,
-    style,
-    variant,
-    children,
-    className,
-    color = 'gray',
-    size = 'md',
-    weight = 'filled',
-  } = props
+export default function Avatar ({
+  src,
+  alt,
+  style,
+  variant,
+  children,
+  className,
+  color = 'gray',
+  size = 'md',
+  weight = 'filled',
+}) {
 
   const [imgError, setImgError] = useState(false)
 

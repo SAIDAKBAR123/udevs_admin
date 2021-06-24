@@ -5,6 +5,8 @@ import { useHistory, NavLink } from 'react-router-dom';
 import config from '../../config/defaultSettings';
 import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from '@material-ui/core/styles';
+import Avatar from "../Avatar/Index"
+import Badge from "../Badge/Index"
 import './index.scss';
 import menu from './menu';
 
@@ -27,11 +29,29 @@ function BootstrapTooltip(props) {
 
 export default function App() {
 
+    // **** USE-HOOKS ****
     const history = useHistory()
     const [visible, setVisible] = useState(false)
     const [selectedList, setSelectedList] = useState([])
     const toggleSidebar = () => setVisible(prev => !prev)
 
+
+    useEffect(() => {
+        console.log(menu, history)
+        if (menu.length) {
+            menu.forEach(el => {
+                const fatherPathname = el.path.split('/')[2]
+                if (history.location.pathname.includes(fatherPathname)) { // el.path === history.location.pathname
+                    if (el.children && el.children.length) {
+                        setSelectedList(el.children)
+                        setVisible(prev => true)
+                    }
+                }
+            })
+        }
+    }, [history])
+
+    // **** FUNCTOINS ****
     const linkTo = (item) => {
         console.log(item)
         if (item.isChild) {
@@ -48,25 +68,35 @@ export default function App() {
         setVisible(prev => false)
         return item.path
     }
-    useEffect(() => {
-        console.log(menu, history)
-        if (menu.length) {
-            menu.forEach(el => {
-                if (el.path === history.location.pathname) {
-                    if (el.children && el.children.length) {
-                        setSelectedList(el.children)
-                        setVisible(prev => true)
-                    }
-                }
-            })
-        }
-    }, [history])
+    
+    // **** COMPONENTS ****
+    const RenderSidebarItems = ({ items }) => {
+        useEffect(() => {
+            console.log('sidebar')
+            // setVisible(true)
+        }, [])
+
+        return (
+            <ul className="space-y-2 text-sm mt-5 dashboard_list font-body">
+                {items.map(el => (
+                    <li key={el.title}>
+                        <NavLink activeClassName='is-active' onClick={() => linkTo(el)} to={el.path}>
+                            <span className={`spanITem flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-blue-50 focus:shadow-outline`}>
+                                <span>{el.title}</span>
+                            </span>
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+    
     return (
         <div className="flex h-screen h-full" style={{ height: '100%' }}>
-            <div className="font-body flex flex-col justify-between bg-white p-3" style={{ borderRight: '1px solid rgba(229, 233, 235, 0.75)' }}>
+            <div className="font-body flex flex-col fixed top-0 bottom-0 left-0 justify-between bg-white p-3" style={{ borderRight: '1px solid rgba(229, 233, 235, 0.75)' }}>
                 <div>
                     <ul className="px-auto mb-3 flex" onClick={toggleSidebar}>
-                        <img src={config.project.logo} alt="asdasd" className="rounded-full items-center mx-auto w-10 h-10" />
+                        <Avatar size={40} src={config.project.logo} alt="asdasd" className="mx-auto" />
                     </ul>
                     <ul className="space-y-2 text-sm dashboard_list items-center bg-gray-100 rounded-md">
                         {
@@ -90,18 +120,21 @@ export default function App() {
                     <ul
                         className="space-y-2 items-end dashboard_list font-body transition ease-in-out transform hover:rotate-12 cursor-pointer">
                         <NavLink activeClassName='is-active-profile' to="/home/profile">
-                            <svg width="16" className="profile-icon" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.99956 20C9.09956 20 9.99956 19.1 9.99956 18H5.99956C5.99956 19.1 6.88956 20 7.99956 20ZM13.9996 14V9C13.9996 5.93 12.3596 3.36 9.49956 2.68V2C9.49956 1.17 8.82956 0.5 7.99956 0.5C7.16956 0.5 6.49956 1.17 6.49956 2V2.68C3.62956 3.36 1.99956 5.92 1.99956 9V14L0.709563 15.29C0.0795632 15.92 0.519563 17 1.40956 17H14.5796C15.4696 17 15.9196 15.92 15.2896 15.29L13.9996 14Z" fill="#6E8BB7" />
-                            </svg>
+                            <Badge badgeContent={12} max={10}>
+                                <svg width="16" className="profile-icon" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.99956 20C9.09956 20 9.99956 19.1 9.99956 18H5.99956C5.99956 19.1 6.88956 20 7.99956 20ZM13.9996 14V9C13.9996 5.93 12.3596 3.36 9.49956 2.68V2C9.49956 1.17 8.82956 0.5 7.99956 0.5C7.16956 0.5 6.49956 1.17 6.49956 2V2.68C3.62956 3.36 1.99956 5.92 1.99956 9V14L0.709563 15.29C0.0795632 15.92 0.519563 17 1.40956 17H14.5796C15.4696 17 15.9196 15.92 15.2896 15.29L13.9996 14Z" fill="#6E8BB7" />
+                                </svg>
+                            </Badge>
                         </NavLink>
                     </ul>
                     <ul className="space-y-2 items-end dashboard_list">
-                        <img className="rounded-full cursor-pointer w-10 h-10" src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/portrait-photography/CODERED_B1_portrait_photography-P4a_438x447.jpg.img.jpg" alt="iasdafsd"></img>
+                        <Avatar size={40} src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/portrait-photography/CODERED_B1_portrait_photography-P4a_438x447.jpg.img.jpg" alt="iasdafsd" />
                     </ul>
                 </div>
             </div>
-            <div className={`h-screen sidebar bg-white w-60 p-3${visible ? '' : 'inset-0 transform -translate-x-4 overflow-hidden'}`} style={{
+            <div className={`h-screen sidebar bg-white w-60 p-3 ${visible ? '' : 'inset-0 transform -translate-x-4 overflow-hidden'}`} style={{
                 height: '100%',
+                marginLeft: 72,
                 transition: 'all 0.3s',
                 width: visible ? '' : '0px',
                 opacity: visible ? '1' : '0'
@@ -116,18 +149,7 @@ export default function App() {
                         </svg>
                     </span>
                 </div>
-                <ul className="space-y-2 text-sm mt-5 dashboard_list font-body">
-                    {
-                        selectedList.map(el => <li key={el.title}>
-                            <NavLink activeClassName='is-active' onClick={() => linkTo(el)} to={el.path}>
-                                <span className={`spanITem flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-blue-50 focus:shadow-outline`}>
-                                    <span>{el.title}</span>
-                                </span>
-                            </NavLink>
-                        </li>
-                        )
-                    }
-                </ul>
+                <RenderSidebarItems items={selectedList} />
             </div>
         </div>
     )
