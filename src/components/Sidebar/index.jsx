@@ -9,6 +9,8 @@ import Avatar from "../Avatar/Index"
 import Badge from "../Badge/Index"
 import './index.scss';
 import menu from './menu';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStylesBootstrap = makeStyles((theme) => ({
     arrow: {
@@ -28,7 +30,7 @@ function BootstrapTooltip(props) {
 
 
 export default function App() {
-
+    const [anchorEl, setAnchorEl] = useState(false);
     // **** USE-HOOKS ****
     const history = useHistory()
     const [visible, setVisible] = useState(false)
@@ -127,8 +129,11 @@ export default function App() {
                             </Badge>
                         </NavLink>
                     </ul>
-                    <ul className="space-y-2 items-end dashboard_list">
-                        <Avatar size={40} src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/portrait-photography/CODERED_B1_portrait_photography-P4a_438x447.jpg.img.jpg" alt="iasdafsd" />
+                    <ul style={{ transition: 'all 0.3s', }} className="space-y-2 items-end dashboard_list transition ease-in-out transform">
+                        <div onClick={(e) => setAnchorEl(prev => !prev)} >
+                            <Avatar aria-controls="simple-menu" size={40} src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/portrait-photography/CODERED_B1_portrait_photography-P4a_438x447.jpg.img.jpg" alt="iasdafsd" />
+                        </div>
+                        {anchorEl ? <div className="h-32 rounded p-2 shadow-2xl w-40 bg-background absolute left-16 bottom-12 z-10">Set cont</div> : '' }
                     </ul>
                 </div>
             </div>
