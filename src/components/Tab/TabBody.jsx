@@ -104,7 +104,7 @@ export default function FullWidthTabs() {
           <DataTable />
         </TabPanel>
         <TabPanel value={value}  style={{ height: '76vh' }} index={1} dir={theme.direction}>
-          <DataTable />
+          vsdd
         </TabPanel>
         <TabPanel value={value}  style={{ height: '76vh' }} index={2} dir={theme.direction}>
           <DataTable />

@@ -3,10 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/core/Menu';
 import Button from '../Buttons/index'
 import { searchIcon } from '../Header/Header.jsx'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import Input from '../Input/index'
-import ListItemText from '@material-ui/core/ListItemText';
 
 const plusIcon = <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M11.0003 6.83335H6.83366V11C6.83366 11.4584 6.45866 11.8334 6.00033 11.8334C5.54199 11.8334 5.16699 11.4584 5.16699 11V6.83335H1.00033C0.541992 6.83335 0.166992 6.45835 0.166992 6.00002C0.166992 5.54169 0.541992 5.16669 1.00033 5.16669H5.16699V1.00002C5.16699 0.541687 5.54199 0.166687 6.00033 0.166687C6.45866 0.166687 6.83366 0.541687 6.83366 1.00002V5.16669H11.0003C11.4587 5.16669 11.8337 5.54169 11.8337 6.00002C11.8337 6.45835 11.4587 6.83335 11.0003 6.83335Z" fill="white" />

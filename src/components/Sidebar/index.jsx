@@ -83,7 +83,7 @@ export default function App() {
                 {items.map(el => (
                     <li key={el.title}>
                         <NavLink activeClassName='is-active' onClick={() => linkTo(el)} to={el.path}>
-                            <span className={`spanITem flex items-center space-x-3 text-gray-700 p-3 hover:text-white rounded-md font-medium hover:bg-secondary focus:shadow-outline`}>
+                            <span className={`spanITem flex items-center space-x-3 text-gray-700 p-3 hover:text-black rounded-md font-medium hover:bg-background_2 focus:shadow-outline`}>
                                 <span>{el.title}</span>
                             </span>
                         </NavLink>
@@ -95,17 +95,17 @@ export default function App() {
     
     return (
         <div className="flex h-screen h-full" style={{ height: '100%' }}>
-            <div className="font-body flex flex-col fixed top-0 bottom-0 left-0 justify-between bg-white p-3" style={{ borderRight: '1px solid rgba(229, 233, 235, 0.75)' }}>
+            <div className="font-body flex flex-col items-center fixed top-0 bottom-0 left-0 justify-between bg-white" style={{ borderRight: '1px solid rgba(229, 233, 235, 0.75)' }}>
                 <div>
-                    <ul className="px-auto mb-3 flex" onClick={toggleSidebar}>
-                        <Avatar size={40} src={config.project.logo} alt="asdasd" className="mx-auto" />
+                    <ul className="px-auto mb-3 mt-2 flex" onClick={toggleSidebar}>
+                        <Avatar size={32} src={config.project.logo} alt="asdasd" className="mx-auto" />
                     </ul>
-                    <ul className="space-y-2 text-sm dashboard_list items-center bg-gray-100 rounded-md">
+                    <ul className="space-y-2 w-full text-sm items-center">
                         {
                             menu.map(el => <li key={el.title}>
                                 <NavLink exact={true} activeClassName='is-active-sidebar' onClick={() => linkTo(el)} to={el.path}>
                                     <BootstrapTooltip title={el.title}>
-                                        <span className={`active-sidebar w-12 h-12 flex items-center justify-center space-x-2 text-gray-700 p-3 rounded-md`}>
+                                        <span className={`active-sidebar w-14 h-14 flex items-center justify-center space-x-2 text-gray-700 p-0 rounded-md`}>
                                             <span className="text-gray-600 flex items-center">
                                                 {el.icon}
                                             </span>
@@ -139,7 +139,7 @@ export default function App() {
             </div>
             <div className={`h-screen sidebar bg-white w-60 ${visible ? 'p-3' : 'inset-0 transform -translate-x-4 overflow-hidden'}`} style={{
                 height: '100%',
-                marginLeft: 72,
+                marginLeft: 49,
                 transition: 'all 0.3s',
                 width: visible ? '' : '0px',
                 opacity: visible ? '1' : '0'

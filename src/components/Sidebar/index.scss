@@ -3,19 +3,23 @@
 	transition: transform 0.5s;
 }
 .is-active .spanITem {
-background: rgba(64, 148, 247, 0.2);
-color: rgba(64, 148, 247, 1);
+background: var(--color-primary);
+color: var(--color-secondary);
 font-weight: 500;
 // transition: all .1s;
 
 }
-
+.is-active-sidebar {
+    width: 100%;
+}
 .is-active-sidebar svg path{
-    fill: rgb(247, 247, 247)
+    fill: var(--color-primary);
 }
 
 .is-active-sidebar .active-sidebar{
-    background: var(--color-primary);
+    // background: var(--color-primary);
+    border-right: 3px solid var(--color-primary);;
+    border-radius: 0px;
 }
 
 .is-active-profile {

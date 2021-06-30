@@ -53,7 +53,7 @@ export default function Button (props) {
             case 'filled':
                 return { color: color + ' iconColor-filled hover:bg-secondary' }
             case 'outlined':
-                return { color: color + ' bg-white iconColor-outlined text-gray-900  border hover:bg-secondary' }
+                return { color: color + ' bg-white iconColor-outlined text-gray-900  border hover:bg-background_2' }
             case 'text':
                 return { color: ' bg-transparent iconColor-text ' + color }
         
