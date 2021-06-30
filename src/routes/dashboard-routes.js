@@ -1,11 +1,14 @@
 import Dashboard from "../views/dashboard/index.jsx";
 import Profile from "../views/profiles/index.jsx";
-import UiComponents from '../views/ui-components/index.jsx'
-import Accordions from '../views/accordions/Accordions.jsx'
-import Buttons from '../views/buttons/index'
-import Cards from '../views/cards/index'
-import TableOrder from '../views/tableOrder/index'
-import Avatars from "../views/avatars/Avatars"
+import UiComponents from "../views/ui-components/index.jsx";
+import Accordions from "../views/accordions/Accordions.jsx";
+import Buttons from "../views/buttons/index";
+import Cards from "../views/cards/index";
+import TableOrder from "../views/tableOrder/index";
+import Avatars from "../views/avatars/Avatars";
+import TableComp from "../views/tablecomp/index";
+import Modal from "../views/modal/index";
+import Popup from "../views/popup/index";
 
 export default [
   {
@@ -15,7 +18,7 @@ export default [
     exact: true,
     title: "Dashboard",
     permission: "",
-    children: []
+    children: [],
   },
   {
     id: 365,
@@ -25,7 +28,7 @@ export default [
     title: "Accordiond",
     showSidepanel: false,
     permission: "",
-    children: []
+    children: [],
   },
   {
     id: 343,
@@ -35,7 +38,7 @@ export default [
     title: "Button",
     showSidepanel: false,
     permission: "",
-    children: []
+    children: [],
   },
   {
     id: 3654,
@@ -45,7 +48,7 @@ export default [
     title: "Cards",
     showSidepanel: false,
     permission: "",
-    children: []
+    children: [],
   },
   {
     id: 34,
@@ -55,10 +58,9 @@ export default [
     title: "Table ui",
     showSidepanel: false,
     permission: "",
-    children: []
+    children: [],
   },
   {
-
     id: 4,
     component: Avatars,
     path: "/dashboard/avatars",
@@ -66,7 +68,7 @@ export default [
     title: "Avatar",
     showSidepanel: false,
     permission: "",
-    children: []
+    children: [],
   },
   {
     id: 13,
@@ -75,15 +77,33 @@ export default [
     exact: true,
     title: "UI component",
     permission: "",
-    children: []
+    children: [],
   },
   {
-    id: 2,
-    component: Profile,
-    path: "/profile",
+    id: 45,
+    component: TableComp,
+    path: "/dashboard/tablecomp",
     exact: true,
-    title: "Profile",
+    title: "Table Component",
     permission: "",
-    children: []
+    children: [],
+  },
+  {
+    id: 33,
+    component: Modal,
+    path: "/dashboard/modal",
+    exact: true,
+    title: "Modal",
+    permission: "",
+    children: [],
+  },
+  {
+    id: 35,
+    component: Popup,
+    path: "/dashboard/popup",
+    exact: true,
+    title: "Popup",
+    permission: "",
+    children: [],
   },
 ].map((route) => ({ ...route, path: `/home${route.path}` }));

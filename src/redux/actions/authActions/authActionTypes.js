@@ -1,0 +1,6 @@
+export const authActionTypes = {
+  AUTH_LOGIN: "AUTH_LOGIN",
+  AUTH_LOGOUT: "AUTH_LOGOUT",
+  AUTH_REGISTER: "AUTH_REGISTER",
+  VERIFY_PHONE: "VERIFY_PHONE",
+};
