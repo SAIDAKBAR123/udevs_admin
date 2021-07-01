@@ -11,7 +11,7 @@ import './index.scss';
 import menu from './menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import Popup from '../Popup/index'
 const useStylesBootstrap = makeStyles((theme) => ({
     arrow: {
         color: theme.palette.common.black,
@@ -133,7 +133,10 @@ export default function App() {
                         <div onClick={(e) => setAnchorEl(prev => !prev)} >
                             <Avatar aria-controls="simple-menu" size={40} src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/portrait-photography/CODERED_B1_portrait_photography-P4a_438x447.jpg.img.jpg" alt="iasdafsd" />
                         </div>
-                        {anchorEl ? <div className="h-32 rounded p-2 shadow-2xl w-40 bg-background absolute left-16 bottom-12 z-10">Set cont</div> : '' }
+                        <Popup isOpen={anchorEl} bottom={4} left={5} onClose={() => setAnchorEl(prev => !prev)}>
+                            helo world helo world helo world
+                        </Popup>
+                        {/* {anchorEl ? <div className="h-32 rounded p-2 shadow-2xl w-40 bg-background absolute left-16 bottom-12 z-10">Set cont</div> : '' } */}
                     </ul>
                 </div>
             </div>

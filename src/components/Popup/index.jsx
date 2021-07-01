@@ -8,15 +8,13 @@ function Popup(props) {
     left,
     right,
     children,
-    title = "Popup title",
+    title = "Popup title title title title title title title",
     isOpen = false,
-    maxWidth = 250,
+    minWidth = 250,
     onClose = function () {},
     className,
     ...rest
   } = props;
-
-  const listItems = children.map((el, idx) => <p key={idx}>{el.name}</p>);
 
   const popupStyle = `top-${top} bottom-${bottom} right-${right} left-${left}`;
 
@@ -28,7 +26,7 @@ function Popup(props) {
           <div
             {...rest}
             className={`${className} ${popupStyle} flex absolute z-50`}
-            style={maxWidth && { maxWidth: maxWidth }}
+            style={minWidth && { minWidth: minWidth }}
           >
             <div
               className="flex flex-row ease-in-out"
@@ -45,7 +43,7 @@ function Popup(props) {
               </div>
               <div className="flex flex-col text-sm font-semibold m-2">
                 <h5>{title}</h5>
-                <p className="font-thin text-gray-500 my-1">{listItems}</p>
+                <p className="font-medium text-gray-500 my-1">{children}</p>
               </div>
 
               <div className="cursor-pointer m-2">

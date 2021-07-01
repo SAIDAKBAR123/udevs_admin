@@ -22,8 +22,8 @@ export default function App() {
           onClose={() => setShowModal((prev) => !prev)}
           isOpen={showModal}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          consequatur quisquam explicabo, consequuntur illo libero.
+          <span className="text-black font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          consequatur quisquam explicabo, consequuntur illo libero.</span>
         </Modal>
       </div>
     </Wrapper>

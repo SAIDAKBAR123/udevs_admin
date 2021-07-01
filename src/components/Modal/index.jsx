@@ -32,8 +32,9 @@ export default function Modal(props) {
   };
 
   return (
-    isOpen && (
-      <>
+    <div style={{ transition: 'all .4s', opacity: isOpen ? 1: 0 }} className="transition ease-in-out duration-100">
+    {isOpen && (
+      <div>
         <div
           onClick={onClose}
           className="modal-overlay bg-gray-900 opacity-50 fixed inset-0 z-40"
@@ -58,7 +59,7 @@ export default function Modal(props) {
             </div>
             <div className="flex flex-col text-sm font-semibold m-2">
               <h5>{title}</h5>
-              <p className="font-thin text-gray-500 my-1">{children}</p>
+              <p className="my-1">{children}</p>
               {children !== "" && (
                 <div className="flex flex-row-reverse mt-2">
                   {primaryAction && (
@@ -93,7 +94,9 @@ export default function Modal(props) {
             </div>
           </div>
         </div>
-      </>
+      </div>
     )
+    }
+    </div>
   );
 }
