@@ -34,19 +34,13 @@ export default function App() {
         >
           Popup
         </button>
-        <Popup isOpen={showPopup} onClose={() => setShowPopup((prev) => !prev)}>
+        <Popup
+          mode="dark"
+          isOpen={showPopup}
+          onClose={() => setShowPopup((prev) => !prev)}
+        >
           {items}
         </Popup>
-        {/* <Modal
-          title="Modal title"
-          primaryAction={() => console.log("Action 1")}
-          secondaryAction={() => console.log("Action 2")}
-          onClose={() => setShowModal((prev) => !prev)}
-          isOpen={showModal}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          consequatur quisquam explicabo, consequuntur illo libero.
-        </Modal> */}
       </div>
     </Wrapper>
   );

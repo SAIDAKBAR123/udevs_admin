@@ -1,9 +1,43 @@
 import "./index.scss";
+import TableComp from "../../components/TableComp/index";
+
+const driversData = [
+  {
+    name: "Lewis Hamilton",
+    country: "England",
+    team: "Mercedes AMG",
+    dob: "07/01/1985",
+  },
+  {
+    name: "Sebastian Vettel",
+    country: "Germany",
+    team: "Aston Martin",
+    dob: "03/07/1987",
+  },
+  {
+    name: "Charles Leclerc",
+    country: "Monaco",
+    team: "Ferrari",
+    dob: "16/10/1997",
+  },
+  {
+    name: "Max Verstappen",
+    country: "Netherlands",
+    team: "Red Bull Racing",
+    dob: "30/09/1997",
+  },
+  {
+    name: "Daniel Ricciardo",
+    country: "Australia",
+    team: "Renault",
+    dob: "01/07/1989",
+  },
+];
 
 export default function App() {
   return (
-    <div className="p-5 font-body space-y-5">
-      <div className="flex justify-center items-center space-x gap-x-5">
+    <div className="p-5 font-body space-y-4">
+      <div className="flex justify-center items-center space-x gap-x-4">
         <div className="w-1/4 bg-white flex h-36 justify-between rounded-md p-8 shadow-lg">
           <div className="w-auto space-y-4">
             <div className="font-bold text-primary text-2xl">24</div>
@@ -113,8 +147,8 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="flex gap-x-5">
-        <div className="w-2/5 flex flex-col bg-white shadow-lg flex h-42 justify-start rounded-md p-8">
+      <div className="flex gap-x-4">
+        <div className="w-1/4 flex flex-col bg-white shadow-lg flex h-42 justify-start rounded-md p-8">
           <span>Total orders this month</span>
           <span className="text-4xl font-bold pt-3">1,850</span>
           <div>
@@ -145,7 +179,7 @@ export default function App() {
             </svg>
           </div>
         </div>
-        <div className="w-1/3 flex items-center bg-white shadow-lg space-x-4 flex h-42 justify-center rounded-md p-8">
+        <div className="w-1/2 flex items-center bg-white shadow-lg space-x-4 flex h-42 justify-center rounded-md p-8">
           <svg
             width="161"
             height="160"
@@ -174,7 +208,7 @@ export default function App() {
             </span>
           </span>
         </div>
-        <div className="w-1/3 flex items-center bg-white shadow-lg space-x-4 flex h-42 justify-center rounded-md p-8">
+        <div className="w-1/2 flex items-center bg-white shadow-lg space-x-4 flex h-42 justify-center rounded-md p-8">
           <svg
             width="161"
             height="160"
@@ -205,6 +239,92 @@ export default function App() {
           </span>
         </div>
       </div>
+      <div className="grid grid-rows-2 grid-cols-3 grid-flow-col gap-4">
+        <div className="row-span-1 flex flex-col bg-white shadow-lg justify-center rounded-md p-8">
+          <span>Earnings this month</span>
+          <span className="text-4xl font-bold pt-3">$6,250</span>
+          <div>
+            <svg
+              width="232"
+              height="92"
+              viewBox="0 0 232 92"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 82.6324C1 82.6324 10.0809 62.0335 19.6664 62.0335C29.2518 62.0335 28.9995 72.5872 35.4319 72.5872C41.8642 72.5872 43.3777 41.8162 54.2244 41.8162C65.071 41.8162 62.2963 52.2427 68.9809 52.2427C75.6655 52.2427 77.179 21.726 89.413 21.726C101.647 21.726 99.7552 41.8162 105.557 41.8162C111.359 41.8162 109.214 31.3896 115.647 31.3896C124.349 31.3896 128.511 61.3978 138.349 61.3978C148.187 61.3978 143.52 41.8162 153.736 41.8162C163.952 41.8162 160.673 72.5872 174.547 72.5872C187.159 72.5872 186.402 21.726 199.141 21.726C210.114 21.726 205.699 41.8162 215.663 41.8162C225.627 41.8162 220.078 1 231.176 1"
+                stroke="#A23FEE"
+                stroke-width="2"
+              />
+              <path
+                d="M19.6664 61.6667C10.0809 61.6667 1 82.1417 1 82.1417V92H231.176V1C220.078 1 225.627 41.5708 215.663 41.5708C205.699 41.5708 210.114 21.6014 199.141 21.6014C186.402 21.6014 187.159 72.157 174.547 72.157C160.673 72.157 163.952 41.5708 153.736 41.5708C143.52 41.5708 148.187 61.0347 138.349 61.0347C128.511 61.0347 124.349 31.2069 115.647 31.2069C109.214 31.2069 111.359 41.5708 105.557 41.5708C99.7552 41.5708 101.647 21.6014 89.413 21.6014C77.179 21.6014 75.6655 51.9347 68.9809 51.9347C62.2963 51.9347 65.071 41.5708 54.2244 41.5708C43.3777 41.5708 41.8642 72.157 35.4319 72.157C28.9995 72.157 29.2518 61.6667 19.6664 61.6667Z"
+                fill="url(#paint0_linear)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear"
+                  x1="116.088"
+                  y1="1"
+                  x2="116.088"
+                  y2="92"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#A23FEE" stop-opacity="0.8" />
+                  <stop offset="1" stop-color="#A23FEE" stop-opacity="0.1" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div className="row-span-1 flex flex-col bg-white shadow-lg justify-center rounded-md p-8">
+          <span>Total orders this month</span>
+          <span className="text-4xl font-bold pt-3">$12,750</span>
+          <div>
+            <svg
+              width="232"
+              height="92"
+              viewBox="0 0 232 92"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 82.6324C1 82.6324 10.0809 62.0335 19.6664 62.0335C29.2518 62.0335 28.9995 72.5872 35.4319 72.5872C41.8642 72.5872 43.3777 41.8162 54.2244 41.8162C65.071 41.8162 62.2963 52.2427 68.9809 52.2427C75.6655 52.2427 77.179 21.726 89.413 21.726C101.647 21.726 99.7552 41.8162 105.557 41.8162C111.359 41.8162 109.214 31.3896 115.647 31.3896C124.349 31.3896 128.511 61.3978 138.349 61.3978C148.187 61.3978 143.52 41.8162 153.736 41.8162C163.952 41.8162 160.673 72.5872 174.547 72.5872C187.159 72.5872 186.402 21.726 199.141 21.726C210.114 21.726 205.699 41.8162 215.663 41.8162C225.627 41.8162 220.078 1 231.176 1"
+                stroke="#F2271C"
+                stroke-width="2"
+              />
+              <path
+                d="M19.6664 61.6667C10.0809 61.6667 1 82.1417 1 82.1417V92H231.176V1C220.078 1 225.627 41.5708 215.663 41.5708C205.699 41.5708 210.114 21.6014 199.141 21.6014C186.402 21.6014 187.159 72.157 174.547 72.157C160.673 72.157 163.952 41.5708 153.736 41.5708C143.52 41.5708 148.187 61.0347 138.349 61.0347C128.511 61.0347 124.349 31.2069 115.647 31.2069C109.214 31.2069 111.359 41.5708 105.557 41.5708C99.7552 41.5708 101.647 21.6014 89.413 21.6014C77.179 21.6014 75.6655 51.9347 68.9809 51.9347C62.2963 51.9347 65.071 41.5708 54.2244 41.5708C43.3777 41.5708 41.8642 72.157 35.4319 72.157C28.9995 72.157 29.2518 61.6667 19.6664 61.6667Z"
+                fill="url(#paint0_linear)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear"
+                  x1="116.088"
+                  y1="1"
+                  x2="116.088"
+                  y2="92"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#F2271C" stop-opacity="0.8" />
+                  <stop offset="1" stop-color="#F2271C" stop-opacity="0.1" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div className="row-span-2 col-span-2 flex flex-col bg-white shadow-lg justify-center rounded-md p-8">
+          <span>Total orders this month</span>
+          <span className="text-4xl font-bold pt-3">1,850</span>
+          <div></div>
+        </div>
+      </div>
+      <TableComp
+        title="F1 Tracks"
+        headings={["Name", "Country", "Team", "Date of birth"]}
+        sourceData={driversData}
+        checkboxSelection
+      />
+      <div></div>
     </div>
   );
 }
