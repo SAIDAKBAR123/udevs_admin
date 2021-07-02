@@ -14,7 +14,7 @@ function CustomDropdown(props) {
   } = props;
 
   return (
-    <div {...rest} className={`${className} w-full h-auto`}>
+    <div {...rest} className={`${className} w-full`}>
       <select
         name="subject"
         id="subject"
@@ -23,7 +23,7 @@ function CustomDropdown(props) {
         } ${outline && "border"} ${
           disabled ? "cursor-not-allowed" : "cursor-pointer"
         }
-          rounded-md py-auto px-3 mt-3 text-sm 
+          rounded-md px-3 text-sm 
           hover:bg-purple-700 w-full`}
         style={{
           height:
@@ -33,15 +33,14 @@ function CustomDropdown(props) {
         }}
         disabled={disabled}
       >
-        {/* <option>{placeholder !== "" ? placeholder : "Empty"}</option> */}
-        {children.map((el, idx) => (
-          <option key={idx}>{el.title}</option>
+        {children.map((el) => (
+          <option key={el.value}>{el.label}</option>
         ))}
       </select>
       <p
         className={`${
           placeholder === "Error" && "text-red-600"
-        } mx-1 my-2 text-gray-500 text-xs`}
+        } mx-1 text-gray-500 text-xs`}
       >
         {info}
       </p>

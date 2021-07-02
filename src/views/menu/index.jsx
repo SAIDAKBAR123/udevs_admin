@@ -24,7 +24,7 @@ function App() {
 
         <TextHighlight>Highlighted</TextHighlight>
 
-        <CustomDropdown>{["ddasd", "dasdas", "dssd"]}</CustomDropdown>
+        <CustomDropdown>{["Item 1", "Item 2", "Item 3"]}</CustomDropdown>
       </div>
     </Wrapper>
   );

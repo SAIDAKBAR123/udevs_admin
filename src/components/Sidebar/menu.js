@@ -211,8 +211,8 @@ const menu = [
     ),
   },
   {
-    title: "UI components",
-    path: "/home/table",
+    title: "Clients",
+    path: "/home/clients",
     isActive: true,
     icon: (
       <svg

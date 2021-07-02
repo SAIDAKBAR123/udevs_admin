@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import SwipeableViews from "react-swipeable-views";
 
 import TableHeader from "../../components/Header/Header";
@@ -13,6 +14,8 @@ import DataTable from "../../components/DataTable/index";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import TextHighlight from "../../components/TextHighlight";
+import Segment from "../../components/Segment";
+import GoogleMaps from "../../components/GoogleMaps";
 
 function a11yProps(index) {
   return {
@@ -116,9 +119,108 @@ const printIcon = (
   </svg>
 );
 
+const addIcon = (
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="32" height="32" rx="6" fill="#4094F7" fill-opacity="0.1" />
+    <path
+      d="M20.9998 16.8334H16.8332V21.0001C16.8332 21.4584 16.4582 21.8334 15.9998 21.8334C15.5415 21.8334 15.1665 21.4584 15.1665 21.0001V16.8334H10.9998C10.5415 16.8334 10.1665 16.4584 10.1665 16.0001C10.1665 15.5417 10.5415 15.1667 10.9998 15.1667H15.1665V11.0001C15.1665 10.5417 15.5415 10.1667 15.9998 10.1667C16.4582 10.1667 16.8332 10.5417 16.8332 11.0001V15.1667H20.9998C21.4582 15.1667 21.8332 15.5417 21.8332 16.0001C21.8332 16.4584 21.4582 16.8334 20.9998 16.8334Z"
+      fill="#4094F7"
+    />
+  </svg>
+);
+
+const segmentIcon = (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 14 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2.28612 2.28587C1.03588 3.53612 0.333496 5.23181 0.333496 6.99992C0.333496 8.76803 1.03588 10.4637 2.28612 11.714C3.53636 12.9642 5.23205 13.6666 7.00016 13.6666C8.76827 13.6666 10.464 12.9642 11.7142 11.714C12.9644 10.4637 13.6668 8.76803 13.6668 6.99992H7.00016V0.333252C5.23205 0.333252 3.53636 1.03563 2.28612 2.28587Z"
+      fill="#4094F7"
+    />
+    <path
+      d="M11.7142 2.28586C10.872 1.44364 9.81985 0.841983 8.66683 0.543264V5.33326H13.4568C13.1581 4.18024 12.5565 3.12809 11.7142 2.28586Z"
+      fill="#4094F7"
+    />
+  </svg>
+);
+
+const crossIcon = (
+  <svg
+    width="10"
+    height="10"
+    viewBox="0 0 10 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.19998 0.806647C8.93998 0.546647 8.51998 0.546647 8.25998 0.806647L4.99998 4.05998L1.73998 0.79998C1.47998 0.53998 1.05998 0.53998 0.79998 0.79998C0.53998 1.05998 0.53998 1.47998 0.79998 1.73998L4.05998 4.99998L0.79998 8.25998C0.53998 8.51998 0.53998 8.93998 0.79998 9.19998C1.05998 9.45998 1.47998 9.45998 1.73998 9.19998L4.99998 5.93998L8.25998 9.19998C8.51998 9.45998 8.93998 9.45998 9.19998 9.19998C9.45998 8.93998 9.45998 8.51998 9.19998 8.25998L5.93998 4.99998L9.19998 1.73998C9.45331 1.48665 9.45331 1.05998 9.19998 0.806647Z"
+      fill="#4094F7"
+    />
+  </svg>
+);
+
+const moneyIcon = (
+  <svg
+    width="21"
+    height="20"
+    viewBox="0 0 21 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.5 0C4.98 0 0.5 4.48 0.5 10C0.5 15.52 4.98 20 10.5 20C16.02 20 20.5 15.52 20.5 10C20.5 4.48 16.02 0 10.5 0ZM11.91 16.09V16.67C11.91 17.4 11.31 18 10.58 18H10.57C9.84 18 9.24 17.4 9.24 16.67V16.07C7.91 15.79 6.73 15.06 6.23 13.83C6 13.28 6.43 12.67 7.03 12.67H7.27C7.64 12.67 7.94 12.92 8.08 13.27C8.37 14.02 9.13 14.54 10.59 14.54C12.55 14.54 12.99 13.56 12.99 12.95C12.99 12.12 12.55 11.34 10.32 10.81C7.84 10.21 6.14 9.19 6.14 7.14C6.14 5.42 7.53 4.3 9.25 3.93V3.33C9.25 2.6 9.85 2 10.58 2H10.59C11.32 2 11.92 2.6 11.92 3.33V3.95C13.3 4.29 14.17 5.15 14.55 6.21C14.75 6.76 14.33 7.34 13.74 7.34H13.48C13.11 7.34 12.81 7.08 12.71 6.72C12.48 5.96 11.85 5.47 10.59 5.47C9.09 5.47 8.19 6.15 8.19 7.11C8.19 7.95 8.84 8.5 10.86 9.02C12.88 9.54 15.04 10.41 15.04 12.93C15.02 14.76 13.65 15.76 11.91 16.09Z"
+      fill="#4094F7"
+    />
+  </svg>
+);
+
+const carIcon = (
+  <svg
+    width="19"
+    height="16"
+    viewBox="0 0 19 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.42 1.01C16.22 0.42 15.66 0 15 0H4C3.34 0 2.79 0.42 2.58 1.01L0.61 6.68C0.54 6.89 0.5 7.11 0.5 7.34V14.5C0.5 15.33 1.17 16 2 16C2.83 16 3.5 15.33 3.5 14.5V14H15.5V14.5C15.5 15.32 16.17 16 17 16C17.82 16 18.5 15.33 18.5 14.5V7.34C18.5 7.12 18.46 6.89 18.39 6.68L16.42 1.01ZM4 11C3.17 11 2.5 10.33 2.5 9.5C2.5 8.67 3.17 8 4 8C4.83 8 5.5 8.67 5.5 9.5C5.5 10.33 4.83 11 4 11ZM15 11C14.17 11 13.5 10.33 13.5 9.5C13.5 8.67 14.17 8 15 8C15.83 8 16.5 8.67 16.5 9.5C16.5 10.33 15.83 11 15 11ZM2.5 6L3.77 2.18C3.91 1.78 4.29 1.5 4.72 1.5H14.28C14.71 1.5 15.09 1.78 15.23 2.18L16.5 6H2.5Z"
+      fill="#4094F7"
+    />
+  </svg>
+);
+
+const sumIcon = (
+  <svg
+    width="15"
+    height="16"
+    viewBox="0 0 15 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M13.5 12V14C13.5 14.2652 13.3946 14.5196 13.2071 14.7071C13.0196 14.8946 12.7652 15 12.5 15H1.5L7.5 8L1.5 1H12.5C12.7652 1 13.0196 1.10536 13.2071 1.29289C13.3946 1.48043 13.5 1.73478 13.5 2V4"
+      stroke="#4094F7"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
 function App() {
   const [value, setValue] = useState(0);
   const theme = useTheme();
+  const history = useHistory();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -143,18 +245,38 @@ function App() {
   ];
 
   const cancelAndSaveButtons = [
-    <TextHighlight color="green" className="text-sm">
+    <TextHighlight color="green" className="text-sm mx-2">
       0:02:36
     </TextHighlight>,
-    <TextHighlight color="blue" className="text-sm">
+    <TextHighlight color="blue" className="text-sm mx-2">
       Доставлен
     </TextHighlight>,
-    <Button shape="text" color="error" icon={cancelIcon}>
+    <Button
+      shape="text"
+      color="error"
+      icon={cancelIcon}
+      onClick={() => history.goBack()}
+    >
       Отменить
     </Button>,
     <Button shape="text" color="primary" icon={saveIcon}>
       Сохранить
     </Button>,
+  ];
+
+  const clientTypes = [
+    {
+      label: "Type 1",
+      value: 1,
+    },
+    {
+      label: "Type 2",
+      value: 2,
+    },
+    {
+      label: "Type 3",
+      value: 3,
+    },
   ];
 
   return (
@@ -197,33 +319,253 @@ function App() {
           index={0}
           dir={theme.direction}
         >
-          <div className="grid grid-cols-2 grid-row-5 gap-4">
-            <div className="row-span-3 bg-white rounded-md py-2 ">
-              <h5 className="py-1 px-4">Клиент</h5>
+          <div className="grid grid-cols-2 grid-row-5 gap-4 font-body">
+            {/* first grid */}
+            <div className="row-span-3 bg-white rounded-md pb-2">
+              {/* Clients */}
+              <h5 className="text-sm font-semibold py-3 px-4">Клиент</h5>
               <hr />
-              <div className="flex flex-col">
-                <div className="flex items-center px-4">
-                  <h5>Тип клиента</h5>
-                  <CustomDropdown />
+              <div className="flex flex-col pb-2">
+                <div className="flex items-center py-2 px-4">
+                  <h5 className="w-1/4 text-sm font-semibold text-gray-600 whitespace-nowrap">
+                    Тип клиента
+                  </h5>
+                  <CustomDropdown className="px-3">
+                    {clientTypes}
+                  </CustomDropdown>
                 </div>
-                <div className="flex items-center px-4">
-                  <h5>Имя</h5>
-                  <Input placeholder="Имя"></Input>
+                <div className="flex items-center py-2 px-4">
+                  <h5 className="w-1/4 text-sm font-semibold text-gray-600">
+                    Имя
+                  </h5>
+                  <Input className="px-3" placeholder="Имя"></Input>
                 </div>
-                <div className="flex items-center px-4">
-                  <h5>Фамилия</h5>
-                  <Input placeholder="Имя"></Input>
+                <div className="flex items-center py-2 px-4">
+                  <h5 className="w-1/4 text-sm font-semibold text-gray-600">
+                    Фамилия
+                  </h5>
+                  <Input className="px-3" placeholder="Фамилия"></Input>
                 </div>
-                <div className="flex items-center px-4">
-                  <h5>Телефон</h5>
-                  <Input placeholder="Имя"></Input>
+                <div className="flex items-center py-2 px-4">
+                  <h5 className="w-1/4 text-sm font-semibold text-gray-600">
+                    Телефон
+                  </h5>
+                  <Input className="px-5" placeholder="Телефон"></Input>
+                  <span className="pr-3 cursor-pointer">{addIcon}</span>
                 </div>
               </div>
-            </div>
-            <div className="row-span-3 bg-white rounded-md py-2 px-4">2</div>
+              <hr />
 
-            <div className="col-span-2 row-span-2 bg-white rounded-md py-2 px-4">
-              3
+              {/* Tags */}
+              <h5 className="py-3 px-4">Теги</h5>
+              <div className="flex flex-wrap pl-4 gap-3">
+                <TextHighlight postIcon={crossIcon}>
+                  Выиграл в розыгрыше
+                </TextHighlight>
+                <TextHighlight postIcon={crossIcon} color="green">
+                  Не обработан
+                </TextHighlight>
+                <TextHighlight postIcon={crossIcon} color="orange">
+                  Поставщик
+                </TextHighlight>
+                <TextHighlight postIcon={crossIcon} color="red">
+                  Проблема доставки
+                </TextHighlight>
+                <TextHighlight postIcon={crossIcon} color="orange">
+                  Уточнение по заказу
+                </TextHighlight>
+              </div>
+
+              {/* Segments */}
+              <h5 className="py-3 px-4">Сегменты</h5>
+              <div className="flex flex-wrap gap-3 px-4">
+                <Segment icon={segmentIcon}>Россия</Segment>
+                <Segment icon={segmentIcon}>Россия кроме (Мск)</Segment>
+                <Segment icon={segmentIcon}>Средней давности</Segment>
+                <Segment icon={segmentIcon}>Средняя сумма покупки</Segment>
+                <Segment icon={segmentIcon}>Средний LTV</Segment>
+              </div>
+            </div>
+
+            {/* second grid */}
+            <div className="row-span-3 bg-white rounded-md pb-2">
+              <div className="flex justify-between text-sm font-semibold">
+                <h5 className="py-3 px-4">Доставка</h5>
+                <span className="flex py-3 px-4">
+                  <h5 className="text-gray-600 pr-1">Расстояние: </h5>
+                  <h5>10.4 км</h5>
+                </span>
+              </div>
+              <hr />
+              <div className="flex">
+                <div className="w-3/5 flex items-center py-2 px-4">
+                  <h5 className="text-sm font-semibold text-gray-600 whitespace-nowrap">
+                    Тип доставки
+                  </h5>
+                  <CustomDropdown className="px-3">
+                    {clientTypes}
+                  </CustomDropdown>
+                </div>
+                <div className="w-2/5 flex items-center py-2 px-4">
+                  <h5 className="text-sm font-semibold text-gray-600 whitespace-nowrap">
+                    Тариф
+                  </h5>
+                  <CustomDropdown className="px-3">
+                    {clientTypes}
+                  </CustomDropdown>
+                </div>
+              </div>
+              <div className="flex items-center px-4">
+                <h5 className="w-1/5 text-sm font-semibold text-gray-600 whitespace-nowrap">
+                  Адрес
+                </h5>
+                <Input className="px-3" placeholder="Адрес или обьект"></Input>
+              </div>
+              <div className="flex items-center py-3 justify-center">
+                <GoogleMaps />
+              </div>
+              <div className="flex items-center px-4">
+                <h5 className="w-1/5 text-sm font-semibold text-gray-600 whitespace-nowrap">
+                  Филиал
+                </h5>
+                <Input className="px-3" placeholder="Филиал" />
+              </div>
+              <div className="flex items-center py-3 px-4">
+                <h5 className="w-1/5 text-sm font-semibold text-gray-600 whitespace-nowrap">
+                  Дом
+                </h5>
+
+                <div className="flex pr-3">
+                  <Input placeholder="Дом" />
+                  <div className="w-5/6 flex items-center">
+                    <h5 className="text-sm font-semibold text-gray-600 whitespace-nowrap px-3">
+                      Квартира
+                    </h5>
+                    <Input placeholder="Квартира" />
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center px-4">
+                <h5 className="w-1/5 text-sm font-semibold text-gray-600 whitespace-nowrap">
+                  Этаж
+                </h5>
+                <Input className="px-3" placeholder="Этаж" />
+              </div>
+            </div>
+
+            <div className="col-span-2 row-span-2 bg-white rounded-md pb-2">
+              <div className="flex justify-between">
+                <h5 className="text-sm font-semibold py-3 px-4">Продукты</h5>
+                <div className="flex">
+                  <h5 className="text-sm text-gray-600 font-semibold py-3 px-4">
+                    История заказов
+                  </h5>
+                </div>
+              </div>
+              <hr />
+              <div className="grid grid-cols-12 px-4 pt-2 gap-3 items-center">
+                <div className="col-span-3">
+                  <h5 className="text-gray-600 text-sm font-semibold py-2">
+                    Наименование
+                  </h5>
+                  <CustomDropdown />
+                </div>
+                <div className="col-span-2">
+                  <h5 className="text-gray-600 text-sm font-semibold py-2">
+                    Цена
+                  </h5>
+                  <Input placeholder="26 000 сум" />
+                </div>
+
+                <div className="col-span-2">
+                  <h5 className="text-gray-600 text-sm font-semibold py-2">
+                    Кол-во
+                  </h5>
+                  <Input />
+                </div>
+                <div className="col-span-2">
+                  <h5 className="text-gray-600 text-sm whitespace-nowrap font-semibold py-2">
+                    Общая стоимость
+                  </h5>
+                  <Input />
+                </div>
+                <div className="col-span-3">
+                  <h5 className="text-gray-600 text-sm whitespace-nowrap font-semibold py-2">
+                    Описание
+                  </h5>
+                  <Input />
+                </div>
+              </div>
+              <div className="flex items-center justify-center bg-blue-100 rounded-lg border border-dashed border-blue-500 cursor-pointer my-6 mx-4 py-2">
+                <h5 className="text-sm font-thin text-blue-800">
+                  + Добавить продукт
+                </h5>
+              </div>
+              <hr />
+              <div className="flex py-4">
+                <div className="w-1/2 flex flex-col gap-4 pr-2">
+                  <div className="flex">
+                    <h5 className="text-sm text-gray-600 font-semibold py-3 px-4">
+                      Типы оплаты
+                    </h5>
+                    <div className="flex gap-3">
+                      <div className="flex items-center border rounded-lg px-10">
+                        {cancelIcon}
+                      </div>
+                      <div className="flex items-center border rounded-lg px-10">
+                        {cancelIcon}
+                      </div>
+                      <div className="flex items-center border rounded-lg px-10">
+                        {cancelIcon}
+                      </div>
+                      <div className="flex items-center border rounded-lg px-10">
+                        {cancelIcon}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <h5 className="w-1/4 text-sm text-gray-600 font-semibold py-3 px-4">
+                      Курьер
+                    </h5>
+                    <CustomDropdown />
+                  </div>
+                  <div className="flex items-center">
+                    <h5 className="w-1/4 text-sm text-gray-600 font-semibold py-3 px-4">
+                      Оператор
+                    </h5>
+                    <CustomDropdown />
+                  </div>
+                </div>
+                <div className="border-l mx-5"></div>
+                <div className="w-1/2 flex flex-col pl-2">
+                  <div className="flex">
+                    <div className="w-1/2  flex items-center">
+                      {moneyIcon}
+                      <h5 className="text-sm text-gray-600 py-3 px-4">
+                        Сумма заказа
+                      </h5>
+                    </div>
+                    <h5 className="text-sm py-3 px-4">2 000 000 сум</h5>
+                  </div>
+                  <div className="flex">
+                    <div className="w-1/2  flex items-center">
+                      {carIcon}
+                      <h5 className="text-sm text-gray-600 py-3 px-4">
+                        Сумма доставки
+                      </h5>
+                    </div>
+                    <h5 className="text-sm py-3 px-4">10 000 сум</h5>
+                  </div>
+                  <hr className="my-4 mx-2" />
+                  <div className="flex">
+                    <div className="w-1/2 flex items-center">
+                      {sumIcon}
+                      <h5 className="text-md py-3 px-4">Итого</h5>
+                    </div>
+                    <h5 className="text-md py-3 px-4">2 010 000 сум</h5>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </TabPanel>

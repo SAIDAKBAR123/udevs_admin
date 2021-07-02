@@ -14,7 +14,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 //Icons
-const filterIcon = (
+export const filterIcon = (
   <svg
     width="14"
     height="14"
@@ -29,7 +29,7 @@ const filterIcon = (
   </svg>
 );
 
-const downloadIcon = (
+export const downloadIcon = (
   <svg
     width="12"
     height="14"
@@ -46,7 +46,7 @@ const downloadIcon = (
   </svg>
 );
 
-const tableIcon = (
+export const tableIcon = (
   <svg
     width="17"
     height="16"
@@ -95,7 +95,7 @@ const mapIcon = (
   </svg>
 );
 
-const plusIcon = (
+export const plusIcon = (
   <svg
     width="12"
     height="12"
@@ -215,7 +215,7 @@ export default function App() {
         <div className="bg-gray-50 h-14 w-full flex items-center font-body">
           <div className="flex justify-between w-full items-center px-4">
             <div className="flex w-4/12">
-              <div className="text-md font-semibold w-4/5">
+              <div className="text-md font-semibold w-4/5 px-3">
                 <Input
                   icon={searchIcon}
                   placeholder="Ид. Заказа, Номер, Курьер, Статус, Способ оплаты"

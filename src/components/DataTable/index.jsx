@@ -13,16 +13,19 @@ import { useState } from "react";
 
 import "./index.scss";
 import TextHighlight from "../TextHighlight/index.jsx";
-const StyledTableCell = withStyles((theme) => ({
+
+export const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: "white",
     color: "black",
     fontFamily: "Inter",
     fontWeight: "600",
+    height: "50px",
   },
   body: {
     fontSize: 14,
     fontFamily: "Inter",
+    height: "50px",
     // minWidth: 200
   },
 }))(TableCell);
@@ -123,7 +126,7 @@ const checkIcon = (
   </svg>
 );
 
-const icon = (
+export const icon = (
   <svg
     width="14"
     height="5"
@@ -139,7 +142,7 @@ const icon = (
 );
 
 //List
-const listRender = [
+export const listRender = [
   {
     title: "Повторить выставить счет",
     icon: refreshIcon,
@@ -162,7 +165,7 @@ const listRender = [
   },
 ];
 
-const StyledTableRow = withStyles((theme) => ({
+export const StyledTableRow = withStyles((theme) => ({
   root: {
     "&:nth-of-type(odd)": {
       // backgroundColor: 'rgba(14, 115, 246, 0.08)',
@@ -251,7 +254,7 @@ const rows = [
   },
 ];
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles({
   table: {
     minWidth: 200,
     borderRadius: "6px",
