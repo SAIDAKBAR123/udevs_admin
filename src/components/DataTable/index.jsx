@@ -27,6 +27,7 @@ const StyledTableCell = withStyles((theme) => ({
   },
 }))(TableCell);
 
+//Icons
 const refreshIcon = (
   <svg
     width="32"
@@ -137,6 +138,7 @@ const icon = (
   </svg>
 );
 
+//List
 const listRender = [
   {
     title: "Повторить выставить счет",

@@ -13,6 +13,7 @@ import { searchIcon } from "../../components/Header/Header.jsx";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+//Icons
 const filterIcon = (
   <svg
     width="14"
@@ -124,6 +125,7 @@ const editIcon = (
   </svg>
 );
 
+//List
 const listRender = [
   {
     title: "№",
@@ -183,31 +185,33 @@ export default function App() {
   const [dropList, setDropList] = useState(null);
   const history = useHistory();
 
+  //Header items and buttons
+  const tableAndMap = [
+    <Button shape="text" color="secondary" icon={tableIconMini}>
+      Таблица
+    </Button>,
+    <Button shape="text" color="secondary" icon={mapIcon}>
+      Карта
+    </Button>,
+  ];
+
+  const actionAndCreate = [
+    <Button shape="text" icon={editIcon}>
+      Действия
+    </Button>,
+    <Button
+      shape="text"
+      color="success"
+      icon={plusIcon}
+      onClick={() => history.push("/home/orders/create")}
+    >
+      Создать
+    </Button>,
+  ];
+
   return (
     <div>
-      <TableHeader
-        left={[
-          <Button shape="text" color="secondary" icon={tableIconMini}>
-            Таблица
-          </Button>,
-          <Button shape="text" color="secondary" icon={mapIcon}>
-            Карта
-          </Button>,
-        ]}
-        right={[
-          <Button shape="text" icon={editIcon}>
-            Действия
-          </Button>,
-          <Button
-            shape="text"
-            color="success"
-            icon={plusIcon}
-            onClick={() => history.push("/home/orders/create")}
-          >
-            Создать
-          </Button>,
-        ]}
-      >
+      <TableHeader left={tableAndMap} right={actionAndCreate}>
         <div className="bg-gray-50 h-14 w-full flex items-center font-body">
           <div className="flex justify-between w-full items-center px-4">
             <div className="flex w-4/12">

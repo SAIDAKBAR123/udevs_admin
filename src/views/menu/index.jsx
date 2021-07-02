@@ -1,6 +1,7 @@
 import Wrapper from "../../components/Template/index.jsx";
 import Menu from "../../components/Menu/index";
 import MenuItem from "../../components/Menu/MenuItem";
+import CustomDropdown from "../../components/Dropdown/CustomDropdown.jsx";
 import { useState } from "react";
 import TextHighlight from "../../components/TextHighlight/index.jsx";
 
@@ -22,6 +23,8 @@ function App() {
         </Menu>
 
         <TextHighlight>Highlighted</TextHighlight>
+
+        <CustomDropdown>{["ddasd", "dasdas", "dssd"]}</CustomDropdown>
       </div>
     </Wrapper>
   );

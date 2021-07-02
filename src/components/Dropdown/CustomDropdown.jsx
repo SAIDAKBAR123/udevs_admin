@@ -1,6 +1,6 @@
 function CustomDropdown(props) {
   const {
-    children,
+    children = [],
     className,
     placeholder = "",
     description = "",
@@ -14,7 +14,7 @@ function CustomDropdown(props) {
   } = props;
 
   return (
-    <div {...rest} className={`${className} w-50 h-auto`}>
+    <div {...rest} className={`${className} w-full h-auto`}>
       <select
         name="subject"
         id="subject"
@@ -33,7 +33,10 @@ function CustomDropdown(props) {
         }}
         disabled={disabled}
       >
-        <option>{placeholder !== "" ? placeholder : "Empty"}</option>
+        {/* <option>{placeholder !== "" ? placeholder : "Empty"}</option> */}
+        {children.map((el, idx) => (
+          <option key={idx}>{el.title}</option>
+        ))}
       </select>
       <p
         className={`${

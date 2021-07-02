@@ -67,7 +67,7 @@ export const searchIcon = (
 );
 
 export default function App(props) {
-  const { children, left = [], right = [], ...rest } = props;
+  const { children, title = "Заказы", left = [], right = [], ...rest } = props;
 
   return (
     <div>
@@ -78,7 +78,7 @@ export default function App(props) {
               className="text-lg font-semibold pl-1 pr-4"
               style={{ color: "rgba(91, 104, 113, 1)" }}
             >
-              Заказы
+              {title}
             </div>
             {left.map((el, idx) => (
               <div key={idx}>{el}</div>
