@@ -36,7 +36,9 @@ export default function App() {
           </Button>
         </div>
         <div className="">
-          <Button size="small">Default</Button>
+          <Button size="small" color="yellow">
+            Default
+          </Button>
         </div>
       </div>
       <div className="w-2/4 flex justify-start space-x-2 items-center mt-4">
@@ -45,10 +47,12 @@ export default function App() {
           <Button icon={<FolderIcon fontSize="medium" />}>Default</Button>
         </div>
         <div className="">
-          <Button icon={<FolderIcon fontSize="medium" />}>Default</Button>
+          <Button icon={<FolderIcon fontSize="medium" />} color="success">
+            Default
+          </Button>
         </div>
         <div className="">
-          <Button>Default</Button>
+          <Button color="error">Default</Button>
         </div>
       </div>
       <div className="w-2/4 flex justify-start space-x-2 items-center mt-4">
@@ -59,12 +63,18 @@ export default function App() {
           </Button>
         </div>
         <div className="">
-          <Button icon={<FolderIcon fontSize="medium" />} size="large">
+          <Button
+            icon={<FolderIcon fontSize="medium" />}
+            color="success"
+            size="large"
+          >
             Default
           </Button>
         </div>
         <div className="">
-          <Button size="large">Default</Button>
+          <Button size="large" color="error">
+            Default
+          </Button>
         </div>
       </div>
       <hr className="my-10"></hr>
@@ -87,12 +97,13 @@ export default function App() {
             shape="outlined"
             icon={<FolderIcon fontSize="small" />}
             size="small"
+            color="success"
           >
             Default
           </Button>
         </div>
         <div className="">
-          <Button shape="outlined" size="small">
+          <Button shape="outlined" size="small" color="error">
             Default
           </Button>
         </div>
@@ -105,12 +116,18 @@ export default function App() {
           </Button>
         </div>
         <div className="">
-          <Button shape="outlined" icon={<FolderIcon fontSize="medium" />}>
+          <Button
+            shape="outlined"
+            icon={<FolderIcon fontSize="medium" />}
+            color="success"
+          >
             Default
           </Button>
         </div>
         <div className="">
-          <Button shape="outlined">Default</Button>
+          <Button shape="outlined" color="error">
+            Default
+          </Button>
         </div>
       </div>
       <div className="w-2/4 flex justify-start space-x-2 items-center mt-4">
@@ -129,12 +146,13 @@ export default function App() {
             shape="outlined"
             icon={<FolderIcon fontSize="medium" />}
             size="large"
+            color="success"
           >
             Default
           </Button>
         </div>
         <div className="">
-          <Button shape="outlined" size="large">
+          <Button shape="outlined" size="large" color="error">
             Default
           </Button>
         </div>
@@ -159,7 +177,13 @@ export default function App() {
             shape="text"
             icon={<FolderIcon fontSize="small" />}
             size="small"
+            color="success"
           >
+            Default
+          </Button>
+        </div>
+        <div className="">
+          <Button shape="text" size="small" color="error">
             Default
           </Button>
         </div>
@@ -172,7 +196,16 @@ export default function App() {
           </Button>
         </div>
         <div className="">
-          <Button shape="text" icon={<FolderIcon fontSize="medium" />}>
+          <Button
+            shape="text"
+            icon={<FolderIcon fontSize="medium" />}
+            color="success"
+          >
+            Default
+          </Button>
+        </div>
+        <div className="">
+          <Button shape="text" color="error">
             Default
           </Button>
         </div>
@@ -193,12 +226,13 @@ export default function App() {
             shape="text"
             icon={<FolderIcon fontSize="medium" />}
             size="large"
+            color="success"
           >
             Large
           </Button>
         </div>
         <div className="">
-          <Button shape="text" size="large">
+          <Button shape="text" size="large" color="error">
             Large
           </Button>
         </div>

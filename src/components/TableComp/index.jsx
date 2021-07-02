@@ -104,13 +104,16 @@ export default function TableComp(props) {
   });
 
   return (
-    <div {...rest} className={`${className} bg-white shadow-md rounded my-6`}>
-      <div className="border rounded-t-md text-gray-700 text-center py-2">
+    <div
+      {...rest}
+      className={`${className} bg-white border rounded-lg shadow-md rounded my-6`}
+    >
+      <div className="text-gray-500 text-center font-bold py-4">
         <h2>{title}</h2>
       </div>
       <table className="min-w-max w-full table-auto">
         <thead>
-          <tr className="bg-gray-200 text-gray-600 uppercase text-sm text-left">
+          <tr className="bg-gray-200 text-gray-600 text-sm text-left">
             {checkboxSelection && (
               <th className="py-3 px-6">
                 <input

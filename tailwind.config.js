@@ -5,7 +5,7 @@ const config = {
   background: "rgba(220, 233, 249, 1)",
   secondary: "rgba(110, 139, 183, 1)",
   background_2: "rgba(229, 233, 235, 1)",
-  black: "rgba(48, 57, 64, 1)",
+  dark: "rgba(48, 57, 64, 1)",
   grey: "rgba(132, 145, 154, 1)",
   white: "rgba(255, 255, 255, 1)",
   success: "rgba(56, 217, 185, 1)",

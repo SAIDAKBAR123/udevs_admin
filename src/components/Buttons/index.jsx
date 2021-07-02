@@ -55,7 +55,7 @@ export default function Button(props) {
     switch (key) {
       case "filled":
         return {
-          color: `bg-${color} iconColor-filled hover:bg-blue-400`,
+          color: `bg-${color} iconColor-filled hover:opacity-90`,
           background: "",
         };
       case "outlined":
@@ -63,7 +63,7 @@ export default function Button(props) {
           color: `bg-transparent text-${color} border-${borderWidth} border-${color} hover:bg-background_2`,
         };
       case "text":
-        return { color: `bg-transparent text-${color} ` };
+        return { color: `bg-transparent text-${color} hover:opacity-90` };
 
       default:
         return { color: "iconColor-filled" };
