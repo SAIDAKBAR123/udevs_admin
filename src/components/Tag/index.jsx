@@ -1,49 +1,37 @@
-import { makeStyles } from "@material-ui/core/styles";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import "./index.scss";
+import { useState } from "react";
+import CloseIcon from "@material-ui/icons/Close";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    "& > * + *": {
-      marginTop: theme.spacing(2),
-    },
-  },
-}));
-
-export default function Button(props) {
-  const classes = useStyles();
+export default function Tag(props) {
   const {
     children,
     icon: Icon,
     color = "primary",
     loading = false,
     shape = "filled",
-    borderWidth = 2,
-    position = "left",
+    removable = true,
     size = "medium",
     ...rest
   } = props;
 
-  console.log(children);
+  const [isClicked, setIsClicked] = useState(false);
 
   const getSize = (key) => {
     switch (key) {
       case "small":
         return {
-          size: "h-6 px-2 py-0",
-          fontSize: "text-sm",
+          size: "h-4 px-1",
+          fontSize: "text-xs",
           radius: "rounded",
         };
       case "medium":
         return {
-          size: "h-8 px-3 py-1 min:w-7",
+          size: "h-6 px-3",
           fontSize: "text-sm",
           radius: "rounded-md",
         };
       case "large":
         return {
-          size: "px-4 py-2",
+          size: "h-8 px-3 py-1",
           fontSize: "text-sm",
           radius: "rounded-md",
         };
@@ -58,15 +46,15 @@ export default function Button(props) {
     switch (key) {
       case "filled":
         return {
-          color: `bg-${color} iconColor-filled hover:opacity-90`,
+          color: `bg-${color} iconColor-filled `,
           background: "",
         };
       case "outlined":
         return {
-          color: `bg-transparent text-${color} border-${borderWidth} border-${color} hover:bg-background_2`,
+          color: `bg-transparent text-${color} border border-${color} `,
         };
-      case "text":
-        return { color: `bg-transparent text-${color} hover:opacity-90` };
+      case "subtle":
+        return { color: `bg-${color}-light text-${color}` };
 
       default:
         return { color: "iconColor-filled" };
@@ -74,12 +62,10 @@ export default function Button(props) {
   };
 
   return (
-    <div>
-      <div className="">
-        <button
-          type="button"
-          className={`
-                
+    !isClicked && (
+      <div
+        className={`
+                        flex
                         focus:outline-none
                         transition
                         ${children ? "" : "w-9 h-9"}
@@ -93,22 +79,25 @@ export default function Button(props) {
                         }
                         text-white 
                         `}
-          {...rest}
+        {...rest}
+      >
+        <div
+          className={`flex items-center ${
+            children ? "space-x-1" : ""
+          } font-semibold`}
         >
-          <div
-            className={`flex items-center ${
-              children ? "space-x-2" : ""
-            } font-medium font-semibold`}
-          >
-            {Icon && position === "left" && (
-              <Icon style={{ fontSize: "18px" }} />
-            )}
+          {Icon && <Icon style={{ fontSize: "18px" }} />}
 
-            <div className={getSize(size).fontSize}>{children}</div>
-            {position === "right" && <Icon />}
-          </div>
-        </button>
+          <div className={getSize(size).fontSize}>{children}</div>
+          {removable && (
+            <CloseIcon
+              style={{ fontSize: "14px" }}
+              className="cursor-pointer"
+              onClick={() => setIsClicked((prev) => !prev)}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    )
   );
 }

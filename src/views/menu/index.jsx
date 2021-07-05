@@ -4,6 +4,8 @@ import MenuItem from "../../components/Menu/MenuItem";
 import CustomDropdown from "../../components/Dropdown/CustomDropdown.jsx";
 import { useState } from "react";
 import TextHighlight from "../../components/TextHighlight/index.jsx";
+import CustomSelect from "../../components/Select/index.jsx";
+import Tag from "../../components/Tag/index.jsx";
 
 function App() {
   const [expand, setExpand] = useState(false);
@@ -23,8 +25,18 @@ function App() {
         </Menu>
 
         <TextHighlight>Highlighted</TextHighlight>
-
-        <CustomDropdown>{["Item 1", "Item 2", "Item 3"]}</CustomDropdown>
+        <CustomSelect />
+        <div className="flex space-x-2">
+          <Tag size="small" shape="outlined" color="success">
+            Badge
+          </Tag>
+          <Tag size="medium" color="purple" shape="subtle">
+            Badge
+          </Tag>
+          <Tag size="large" shape="subtle">
+            Badge
+          </Tag>
+        </div>
       </div>
     </Wrapper>
   );

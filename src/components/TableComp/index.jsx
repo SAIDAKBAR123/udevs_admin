@@ -16,6 +16,7 @@ export default function TableComp(props) {
   const [isSelected, setIsSelected] = useState(
     new Array(sourceData.length).fill(false)
   );
+  const [indeterminate, setIndeterminate] = useState(false);
 
   const checkAllBoxes = () => {
     // if none checkboxes are selected
@@ -25,6 +26,8 @@ export default function TableComp(props) {
       })
     ) {
       setIsSelected(new Array(sourceData.length).fill(true));
+      document.getElementById("parentCheckbox").indeterminate = false;
+
       setIsAllSelected(true);
     }
     // if all checkboxes are selected
@@ -43,6 +46,8 @@ export default function TableComp(props) {
       })
     ) {
       setIsSelected(new Array(sourceData.length).fill(false));
+      document.getElementById("parentCheckbox").indeterminate = false;
+
       setIsAllSelected(true);
     }
   };
@@ -53,6 +58,7 @@ export default function TableComp(props) {
     );
 
     setIsSelected(updatedCheckState);
+    document.getElementById("parentCheckbox").indeterminate = true;
   };
 
   useEffect(() => {
@@ -61,7 +67,6 @@ export default function TableComp(props) {
         return item === true;
       })
     ) {
-      setIsAllSelected(true);
     } else {
       setIsAllSelected(false);
     }
@@ -118,6 +123,7 @@ export default function TableComp(props) {
               <th className="py-3 px-6">
                 <input
                   type="checkbox"
+                  id="parentCheckbox"
                   checked={isAllSelected}
                   onChange={() => checkAllBoxes()}
                 />
