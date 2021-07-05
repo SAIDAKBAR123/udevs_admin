@@ -9,9 +9,9 @@ function Popup(props) {
     right,
     mode = "light",
     children,
-    title = "Popup title",
+    title = "Popup title title title title title title title",
     isOpen = false,
-    maxWidth = 250,
+    minWidth = 250,
     onClose = function () {},
     className,
     ...rest
@@ -35,7 +35,7 @@ function Popup(props) {
           <div
             {...rest}
             className={`${className} ${popupStyle} flex absolute z-50`}
-            style={maxWidth && { maxWidth: maxWidth }}
+            style={minWidth && { minWidth: minWidth }}
           >
             <div
               className="flex flex-row ease-in-out p-3"
