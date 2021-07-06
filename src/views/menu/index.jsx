@@ -7,7 +7,7 @@ import Input from "../../components/Input";
 import InputGroup from "../../components/InputGroup/index.jsx";
 import Tooltip from "../../components/Tooltip/index.jsx";
 import Button from "../../components/Buttons";
-import Tag from "../../components/Tag";
+import Divider from "../../components/Divider/index.jsx";
 
 function App() {
   const [expand, setExpand] = useState(false);
@@ -50,6 +50,18 @@ function App() {
           <CSelect options={options} style={{ width: "250px" }} />
           <CSelect options={options} style={{ width: "250px" }} />
         </InputGroup>
+      </div>
+      <h5 className="py-4">Button Groups</h5>
+      <div className="flex">
+        <InputGroup>
+          <Button shape="filled">Button 1</Button>
+          <Button shape="outlined">Button 1</Button>
+          <Button shape="filled">Button 1</Button>
+        </InputGroup>
+      </div>
+      <h5 className="py-4">Divider</h5>
+      <div className="flex">
+        <Divider>Center context</Divider>
       </div>
       <div className="h5 py-4">Tooltip</div>
       <div className="flex">

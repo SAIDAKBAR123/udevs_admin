@@ -1,28 +1,26 @@
 import { BorderLeft } from "@material-ui/icons";
 import Select from "react-select";
 
-function CSelect(props) {
-  const {
-    children,
-    className,
-    placeholder = "Select...",
-    isClearable = true,
-    isSearchable = false,
-    isMulti = false,
-    isDisabled = false,
-    isLoading = false,
-    options = [],
-    borderRight,
-    borderLeft,
-    borderTopLeftRadius,
-    borderTopRightRadius,
-    borderBottomLeftRadius,
-    borderBottomRightRadius,
-    defaultValue,
-    style,
-    ...rest
-  } = props;
-
+function CSelect({
+  children,
+  className,
+  placeholder = "Select...",
+  isClearable = false,
+  isSearchable = false,
+  isMulti = false,
+  isDisabled = false,
+  isLoading = false,
+  options = [],
+  borderRight,
+  borderLeft,
+  borderTopLeftRadius,
+  borderTopRightRadius,
+  borderBottomLeftRadius,
+  borderBottomRightRadius,
+  defaultValue,
+  style,
+  ...rest
+}) {
   const customStyles = {
     control: (styles) => {
       return {

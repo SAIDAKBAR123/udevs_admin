@@ -76,13 +76,35 @@ function Tooltip(props) {
     }
   };
 
+  const getPosition = (key) => {
+    switch (key) {
+      case "top":
+        return {
+          position: "-mt-8 arrowBottom",
+        };
+      case "bottom":
+        return {
+          position: "-mb-10 arrowTop",
+        };
+      case "right":
+        return {
+          position: "-mr-8 arrowLeft",
+        };
+      case "left":
+        return {
+          position: "-mt-8 arrowRight",
+        };
+
+      default:
+        break;
+    }
+  };
+
   const arrowStyle = {
-    ":after": {
+    "&::after": {
       content: "",
       display: "block",
-
       position: "absolute",
-
       borderTop: "8px solid transparent",
       borderBottom: "8px solid transparent",
       borderRight: "8px solid black",
@@ -92,25 +114,14 @@ function Tooltip(props) {
   };
 
   return (
-    <div {...rest} className={`${className} has-tooltip `}>
+    <div {...rest} className={`${className} has-tooltip`}>
       <span
-        className={`${
-          getTheme(theme).color
-        } ${arrowStyle} tooltip rounded shadow-lg text-xs 
-         -mt-8 px-2 py-1`}
-        style={arrowStyle}
+        className={`${getTheme(theme).color} ${
+          getPosition(placement).position
+        } tooltip rounded shadow-lg text-xs  
+          mx-2 px-2 py-1 `}
       >
         {title}
-        {/* <svg
-          class={`absolute z-10 w-4 h-4 ${
-            theme === "dark" ? "text-gray-900" : "text-gray-100"
-          } transform translate-x-2 translate-y-0 fill-current stroke-current`}
-          width="8"
-          height="8"
-        >
-          <rect x="5" y="-10" width="8" height="8" transform="rotate(45)" />
-        </svg> */}
-        {/* {arrow ? <span className={classes.arrow} ref={setArrowRef} /> : null} */}
       </span>
 
       {children}

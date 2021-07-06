@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Button(props) {
   const classes = useStyles();
   const {
+    className,
     children,
     icon: Icon,
     color = "primary",
@@ -75,15 +76,16 @@ export default function Button(props) {
 
   return (
     <div>
-      <div className="">
-        <button
-          type="button"
-          className={`
-                
+      <button
+        type="button"
+        className={`
+                        ${className}
+                        
                         focus:outline-none
                         transition
                         ${children ? "" : "w-9 h-9"}
                         focus:ring focus:border-blue-300 
+                        focus-within:z-40
                         ${getSize(size).size}
                         ${getSize(size).radius}
                         ${
@@ -93,22 +95,19 @@ export default function Button(props) {
                         }
                         text-white 
                         `}
-          {...rest}
+        {...rest}
+      >
+        <div
+          className={`flex items-center ${
+            children ? "space-x-2" : ""
+          } font-medium font-semibold`}
         >
-          <div
-            className={`flex items-center ${
-              children ? "space-x-2" : ""
-            } font-medium font-semibold`}
-          >
-            {Icon && position === "left" && (
-              <Icon style={{ fontSize: "18px" }} />
-            )}
+          {Icon && position === "left" && <Icon style={{ fontSize: "18px" }} />}
 
-            <div className={getSize(size).fontSize}>{children}</div>
-            {position === "right" && <Icon />}
-          </div>
-        </button>
-      </div>
+          <div className={getSize(size).fontSize}>{children}</div>
+          {position === "right" && <Icon />}
+        </div>
+      </button>
     </div>
   );
 }
