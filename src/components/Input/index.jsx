@@ -4,7 +4,7 @@ export default function App(props) {
   return (
     <div
       className={`border bg-white flex space-x-2 items-center rounded-lg text-body border-gray-200 p-1 px-2 w-full font-smaller focus-within:ring focus-within:outline-none
-                transition focus-within:border-blue-300 ${className}`}
+                transition focus-within:border-blue-300 focus-within:z-40 ${className}`}
       style={style}
     >
       <div>{icon}</div>

@@ -19,20 +19,20 @@ export default function Tag(props) {
     switch (key) {
       case "small":
         return {
-          size: "h-4 px-1",
+          size: "px-1",
           fontSize: "text-xs",
           radius: "rounded",
         };
       case "medium":
         return {
-          size: "h-6 px-3",
-          fontSize: "text-sm",
+          size: "px-3",
+          fontSize: "text-md",
           radius: "rounded-md",
         };
       case "large":
         return {
-          size: "h-8 px-3 py-1",
-          fontSize: "text-sm",
+          size: "px-3 py-1",
+          fontSize: "text-md",
           radius: "rounded-md",
         };
 
@@ -68,6 +68,7 @@ export default function Tag(props) {
                         flex
                         focus:outline-none
                         transition
+                        justify-center
                         ${children ? "" : "w-9 h-9"}
                         focus:ring focus:border-blue-300 
                         ${getSize(size).size}
@@ -82,13 +83,13 @@ export default function Tag(props) {
         {...rest}
       >
         <div
-          className={`flex items-center ${
+          className={`flex  items-center ${
             children ? "space-x-1" : ""
           } font-semibold`}
         >
           {Icon && <Icon style={{ fontSize: "18px" }} />}
 
-          <div className={getSize(size).fontSize}>{children}</div>
+          <div className={`${getSize(size).fontSize}`}>{children}</div>
           {removable && (
             <CloseIcon
               style={{ fontSize: "14px" }}

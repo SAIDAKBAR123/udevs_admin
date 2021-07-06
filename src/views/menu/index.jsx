@@ -1,13 +1,13 @@
 import Wrapper from "../../components/Template/index.jsx";
 import Menu from "../../components/Menu/index";
 import MenuItem from "../../components/Menu/MenuItem";
-import CustomDropdown from "../../components/Dropdown/CustomDropdown.jsx";
 import { useState } from "react";
-import TextHighlight from "../../components/TextHighlight/index.jsx";
 import CSelect from "../../components/Select/index.jsx";
-import Tag from "../../components/Tag/index.jsx";
 import Input from "../../components/Input";
 import InputGroup from "../../components/InputGroup/index.jsx";
+import Tooltip from "../../components/Tooltip/index.jsx";
+import Button from "../../components/Buttons";
+import Tag from "../../components/Tag";
 
 function App() {
   const [expand, setExpand] = useState(false);
@@ -16,6 +16,7 @@ function App() {
     { value: "strawberry", label: "Strawberry" },
     { value: "vanilla", label: "Vanilla" },
   ];
+
   return (
     <Wrapper>
       <h5>Menu</h5>
@@ -32,20 +33,32 @@ function App() {
       </div>
       <div className="grid grid-cols-2 gap-2 pb-4 ">
         <Input />
-        <CSelect>{options}</CSelect>
+        <CSelect options={options} />
       </div>
+      <h5 className="pb-4">Input Groups</h5>
       <div className="flex">
         <InputGroup>
-          <Input
-            className="rounded-r-none focus-within:ring-none border-r-0"
-            placeholder="Firs Name"
-          />
-          <Input
-            className="rounded-l-none rounded-r-none focus-within:ring-0 "
-            placeholder="Last Name"
-          />
-          <Input className="rounded-l-none focus-within:ring-0 border-l-0" />
+          <Input placeholder="First Name" />
+          <Input placeholder="Middle Name" />
+          <Input placeholder="Last Name" />
         </InputGroup>
+      </div>
+      <h5 className="py-4">Select Groups</h5>
+      <div className="flex">
+        <InputGroup>
+          <CSelect options={options} style={{ width: "250px" }} />
+          <CSelect options={options} style={{ width: "250px" }} />
+          <CSelect options={options} style={{ width: "250px" }} />
+        </InputGroup>
+      </div>
+      <div className="h5 py-4">Tooltip</div>
+      <div className="flex">
+        <Tooltip title="asdsadsadasd">
+          <Button>Hover over me</Button>
+        </Tooltip>
+        {/* <Tag shape="subtle" color="error">
+          asdasdsadsa sadasdas
+        </Tag> */}
       </div>
     </Wrapper>
   );

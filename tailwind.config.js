@@ -9,10 +9,6 @@ const config = {
   secondary: "rgba(110, 139, 183, 1)",
   background_2: "rgba(229, 233, 235, 1)",
   dark: "rgba(48, 57, 64, 1)",
-  purple: {
-    light: "rgba(252, 240, 255, 1)",
-    DEFAULT: "rgba(126, 16, 229, 1)",
-  },
   teal: {
     light: "rgba(228, 252, 252, 1)",
     DEFAULT: "rgba(13, 150, 118, 1)",
@@ -23,7 +19,10 @@ const config = {
     light: "rgba(235, 255, 241, 1)",
     DEFAULT: "rgba(56, 217, 185, 1)",
   },
-  purple: "rgba(196, 121, 243, 1)",
+  purple: {
+    light: "rgba(252, 240, 255, 1)",
+    DEFAULT: "rgba(196, 121, 243, 1)",
+  },
   yellow: "rgba(248, 221, 78, 1)",
   error: {
     light: "rgba(255, 239, 235, 1)",

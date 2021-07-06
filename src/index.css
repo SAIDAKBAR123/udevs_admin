@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #4094F7;
+  --color-primary: #4094f7;
   --color-secondary: #eeeeee;
 }
 
@@ -9,26 +9,25 @@
 
 body {
   margin: 0;
-  font-family:  -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.dashboard_list li{
+.dashboard_list li {
   cursor: pointer;
   user-select: none;
-
 }
 
 .trnns-group {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 ::-webkit-scrollbar {
@@ -37,26 +36,26 @@ code {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: rgba(107, 179, 250, 1); 
+  background: rgba(107, 179, 250, 1);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(42, 117, 192); 
+  background: rgb(42, 117, 192);
 }
- input {
-   outline: 0;
-   background-color: transparent;
-   width: 100%;
-   transition: all 0.3s;
- }
+input {
+  outline: 0;
+  background-color: transparent;
+  width: 100%;
+  transition: all 0.3s;
+}
 
- input:focus {
-   opacity: 0.7;
- }
+input:focus {
+  opacity: 0.7;
+}

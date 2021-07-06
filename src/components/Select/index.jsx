@@ -1,3 +1,4 @@
+import { BorderLeft } from "@material-ui/icons";
 import Select from "react-select";
 
 function CSelect(props) {
@@ -7,9 +8,17 @@ function CSelect(props) {
     placeholder = "Select...",
     isClearable = true,
     isSearchable = false,
-    isMulti = true,
+    isMulti = false,
     isDisabled = false,
     isLoading = false,
+    options = [],
+    borderRight,
+    borderLeft,
+    borderTopLeftRadius,
+    borderTopRightRadius,
+    borderBottomLeftRadius,
+    borderBottomRightRadius,
+    defaultValue,
     style,
     ...rest
   } = props;
@@ -19,10 +28,16 @@ function CSelect(props) {
       return {
         ...styles,
         borderRadius: "0.5rem",
+        borderTopLeftRadius: borderTopLeftRadius,
+        borderTopRightRadius: borderTopRightRadius,
+        borderBottomLeftRadius: borderBottomLeftRadius,
+        borderBottomRightRadius: borderBottomRightRadius,
         border: "2px solid rgba(229, 231, 235)",
         ":hover": {
           border: "2px solid rgba(64, 148, 247, 1)",
         },
+        borderRight: borderRight,
+        boderLeft: borderLeft,
         ":focus-within": {
           border: "2px solid rgba(64, 148, 247, 0.5)",
           boxShadow:
@@ -38,18 +53,21 @@ function CSelect(props) {
   };
 
   return (
-    <div style={style} className={`${className} text-body `}>
+    <div
+      style={style}
+      className={`${className} text-body focus-within:z-40 border-0`}
+    >
       <Select
         className="basic-single"
         classNamePrefix="select"
         placeholder={placeholder}
-        defaultValue={children[0]}
+        defaultValue={defaultValue}
         isDisabled={isDisabled}
         isLoading={isLoading}
         isMulti={isMulti}
         isClearable={isClearable}
         isSearchable={isSearchable}
-        options={children}
+        options={options}
         styles={customStyles}
         {...rest}
       />
