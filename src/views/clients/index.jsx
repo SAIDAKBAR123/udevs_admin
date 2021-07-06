@@ -19,11 +19,14 @@ import {
   StyledTableCell,
   StyledTableRow,
   listRender,
-  icon,
   useStyles,
 } from "../../components/DataTable/index";
 
 //icons
+import PeopleIcon from "@material-ui/icons/People";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import DriveEtaIcon from "@material-ui/icons/DriveEta";
+import StorefrontIcon from "@material-ui/icons/Storefront";
 
 //data
 
@@ -117,37 +120,45 @@ export default function App() {
           </div>
         </div>
       </TableHeader>
-      <div className="flex justify-center items-center gap-x-4 p-4">
-        <div className="w-1/4 bg-white flex h-36 justify-between rounded-md p-8 shadow-lg">
+      <div className="flex justify-center items-center gap-x-4 p-5">
+        <div className="w-1/4 bg-white flex h-30 justify-between rounded-md p-8 shadow-lg">
           <div className="w-auto space-y-4">
             <div className="font-bold text-primary text-2xl">24</div>
             <div className="text-grey text-sm">Филиалы</div>
           </div>
-          <div className="w-auto">Office icon</div>
+          <div className="flex bg-blue-100 text-primary rounded-md items-center px-6">
+            <StorefrontIcon style={{ fontSize: "30px" }} />
+          </div>
         </div>
-        <div className="w-1/4 bg-white flex h-36 justify-between rounded-md p-8 shadow-lg">
+        <div className="w-1/4 bg-white flex h-30 justify-between rounded-md p-8 shadow-lg">
           <div className="w-auto space-y-4">
             <div className="font-bold text-primary text-2xl">110,823</div>
             <div className="text-grey text-sm">Клиенты</div>
           </div>
-          <div className="w-auto">Clients icon</div>
+          <div className="flex bg-blue-100 text-primary rounded-md items-center px-6">
+            <PeopleIcon style={{ fontSize: "30px" }} />
+          </div>
         </div>
-        <div className="w-1/4 bg-white flex h-36 justify-between rounded-md p-8 shadow-lg">
+        <div className="w-1/4 bg-white flex h-30 justify-between rounded-md p-8 shadow-lg">
           <div className="w-auto space-y-4">
             <div className="font-bold text-primary text-2xl">110,823</div>
             <div className="text-grey text-sm">Подписчики</div>
           </div>
-          <div className="w-auto">Bellicon</div>
+          <div className="flex bg-blue-100 text-primary rounded-md items-center px-6">
+            <NotificationsIcon style={{ fontSize: "30px" }} />
+          </div>
         </div>
-        <div className="w-1/4 bg-white flex h-36 justify-between rounded-md p-8 shadow-lg">
+        <div className="w-1/4 bg-white flex h-30 justify-between rounded-md p-8 shadow-lg">
           <div className="w-auto space-y-4">
             <div className="font-bold text-primary text-2xl">75</div>
             <div className="text-grey text-sm">Курьеры</div>
           </div>
-          <div className="w-auto">Couriericon</div>
+          <div className="flex bg-blue-100 text-primary rounded-md items-center px-6">
+            <DriveEtaIcon style={{ fontSize: "30px" }} />
+          </div>
         </div>
       </div>
-      <div className="fslex px-4 py-2">
+      <div className="fslex px-5 pb-4">
         <TableContainer
           elevation={0}
           component={Paper}
