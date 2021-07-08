@@ -1,5 +1,5 @@
-import { ReactComponent as InfoIcon } from "../../assets/icons/infoIcon.svg";
 import { ReactComponent as CancelIcon } from "../../assets/icons/cancelIcon.svg";
+import "./index.css";
 
 function Popup(props) {
   const {
@@ -11,62 +11,49 @@ function Popup(props) {
     children,
     title = "Popup title",
     isOpen = false,
-    maxWidth = 250,
+    minWidth = 150,
     onClose = function () {},
     className,
     ...rest
   } = props;
-
-  const listItems = children.map((el, idx) => (
-    <p key={idx}>
-      <button className="py-1 px-3">
-        <a href={el.url}>{el.name}</a>
-      </button>
-    </p>
-  ));
 
   const popupStyle = `top-${top} bottom-${bottom} right-${right} left-${left}`;
 
   return (
     isOpen && (
       <>
-        <div onClick={onClose} className="fixed inset-0 z-40"></div>
-        <div {...rest} className={`${className} flex`}>
+        <div onClick={onClose} className=" fixed inset-0 z-40"></div>
+        <div
+          {...rest}
+          className={`${className} ${popupStyle} flex absolute z-50`}
+          style={minWidth && { width: minWidth }}
+        >
           <div
-            {...rest}
-            className={`${className} ${popupStyle} flex absolute z-50`}
-            style={maxWidth && { maxWidth: maxWidth }}
+            className="flex flex-row ease-in-out p-3 customTop"
+            style={{
+              background: mode === "dark" ? "#333" : "#fff",
+              borderRadius: "6px",
+              boxShadow:
+                "0px 0px 1px rgba(26, 32, 36, 0.32), 0px 40px 64px rgba(91, 104, 113, 0.24)",
+            }}
           >
             <div
-              className="flex flex-row ease-in-out p-3"
-              style={{
-                background: mode === "dark" ? "#333" : "#fff",
-                borderRadius: "6px",
-                boxShadow:
-                  "0px 0px 1px rgba(26, 32, 36, 0.32), 0px 40px 64px rgba(91, 104, 113, 0.24)",
-              }}
+              className={`${
+                mode === "dark" && "text-gray-200"
+              } flex flex-col text-sm font-semibold mx-2 my-1`}
             >
-              <div className="mx-1 my-1">
-                <InfoIcon />
-              </div>
-              <div
+              <h5>{title}</h5>
+              <p
                 className={`${
-                  mode === "dark" && "text-gray-200"
-                } flex flex-col text-sm font-semibold mx-2 my-1`}
+                  mode === "dark" ? "text-gray-300" : "text-gray-500"
+                } font-thin my-1`}
               >
-                <h5>{title}</h5>
-                <p
-                  className={`${
-                    mode === "dark" ? "text-gray-300" : "text-gray-500"
-                  } font-thin my-1`}
-                >
-                  {listItems}
-                </p>
-              </div>
+                {children}
+              </p>
+            </div>
 
-              <div className="cursor-pointer mx-1 my-1">
-                <CancelIcon onClick={onClose} />
-              </div>
+            <div className="cursor-pointer mx-1 my-1">
+              <CancelIcon onClick={onClose} />
             </div>
           </div>
         </div>

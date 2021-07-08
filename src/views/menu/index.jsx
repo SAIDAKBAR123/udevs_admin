@@ -8,6 +8,8 @@ import InputGroup from "../../components/InputGroup/index.jsx";
 import Tooltip from "../../components/Tooltip/index.jsx";
 import Button from "../../components/Buttons";
 import Divider from "../../components/Divider/index.jsx";
+import Tree from "../../components/Tree";
+import FolderIcon from "@material-ui/icons/Folder";
 
 function App() {
   const [expand, setExpand] = useState(false);
@@ -71,6 +73,36 @@ function App() {
         {/* <Tag shape="subtle" color="error">
           asdasdsadsa sadasdas
         </Tag> */}
+      </div>
+
+      {/* Tree */}
+      <h5 className="py-4">Tree</h5>
+      <div className="flex flex-col">
+        <Tree caret="Food" firstLevel={true} icon={FolderIcon}>
+          <h5>Beverages</h5>
+          <h5>Fruits</h5>
+
+          <Tree caret="Vegetables">
+            <h5>Broccoli</h5>
+            <h5>Avocado</h5>
+          </Tree>
+        </Tree>
+        <Tree caret="Fruits" firstLevel={true} icon={FolderIcon}>
+          <h5>Apples</h5>
+          <h5>Grapes</h5>
+          <h5>Peaches</h5>
+        </Tree>
+        <Tree caret="Animals" firstLevel={true} icon={FolderIcon}>
+          <Tree caret="Carnivores">
+            <Tree caret="Felines">
+              <h5>Lions</h5>
+              <h5>Cheetahs</h5>
+            </Tree>
+            <h5>Wolves</h5>
+            <h5>Hyenas</h5>
+          </Tree>
+          <h5>Herbivores</h5>
+        </Tree>
       </div>
     </Wrapper>
   );
