@@ -1,17 +1,17 @@
 import { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
-export default function Tag(props) {
-  const {
-    children,
-    icon: Icon,
-    color = "primary",
-    loading = false,
-    shape = "filled",
-    removable = true,
-    size = "medium",
-    ...rest
-  } = props;
+export default function Tag({
+  children,
+  icon: Icon,
+  color = "primary",
+  loading = false,
+  disabled,
+  shape = "filled",
+  removable = true,
+  size = "medium",
+  ...rest
+}) {
 
   const [isClicked, setIsClicked] = useState(false);
 
@@ -74,7 +74,7 @@ export default function Tag(props) {
                         ${getSize(size).size}
                         ${getSize(size).radius}
                         ${
-                          props.disabled
+                          disabled
                             ? "bg-gray-200 cursor-not-allowed"
                             : getShape(shape).color
                         }

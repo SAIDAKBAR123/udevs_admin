@@ -9,9 +9,9 @@ function Popup(props) {
     right,
     mode = "light",
     children,
-    title = "Popup title",
+    title = "Popup title title title title title title title",
     isOpen = false,
-    minWidth = 150,
+    minWidth = 250,
     onClose = function () {},
     className,
     ...rest
@@ -29,13 +29,9 @@ function Popup(props) {
           style={minWidth && { width: minWidth }}
         >
           <div
-            className="flex flex-row ease-in-out p-3 customTop"
-            style={{
-              background: mode === "dark" ? "#333" : "#fff",
-              borderRadius: "6px",
-              boxShadow:
-                "0px 0px 1px rgba(26, 32, 36, 0.32), 0px 40px 64px rgba(91, 104, 113, 0.24)",
-            }}
+            {...rest}
+            className={`${className} ${popupStyle} flex absolute z-50`}
+            style={minWidth && { minWidth: minWidth }}
           >
             <div
               className={`${
