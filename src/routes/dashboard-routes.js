@@ -9,6 +9,7 @@ import Avatars from "../views/avatars/Avatars";
 import TableComp from "../views/tablecomp/index";
 import Modal from "../views/modal/index";
 import Popup from "../views/popup/index";
+import Steps from "../views/steps";
 
 export default [
   {
@@ -106,4 +107,13 @@ export default [
     permission: "",
     children: [],
   },
+  {
+    id: 37,
+    component: Steps,
+    path: "/dashboard/steps",
+    exact: true,
+    title: "Steps",
+    permission: "",
+    children: []
+  }
 ].map((route) => ({ ...route, path: `/home${route.path}` }));
