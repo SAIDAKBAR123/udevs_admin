@@ -6,16 +6,21 @@ import {
   errorSmallIcon,
 } from "./icons";
 
-const StepIndicator = ({
+const Step = ({
   children,
   type = "default",
   passed = false,
   size,
   title,
   subtitle,
+  extra
 }) => {
+
   return (
     <div className="step">
+      <div className="step__description extra">
+        {extra}
+      </div>
       <div className="step__indicator">
         <div className={`step__indicator__icon ${type} ${size}`}>
           <IconGenerator type={type} size={size} />
@@ -63,4 +68,4 @@ const IconGenerator = ({ type, size }) => {
   }
 };
 
-export default StepIndicator;
+export default Step;
