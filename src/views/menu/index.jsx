@@ -10,6 +10,7 @@ import Button from "../../components/Buttons";
 import Divider from "../../components/Divider/index.jsx";
 import Tree from "../../components/Tree";
 import FolderIcon from "@material-ui/icons/Folder";
+import Pagination from "../../components/Pagination/index.jsx";
 
 function App() {
   const [expand, setExpand] = useState(false);
@@ -103,6 +104,12 @@ function App() {
           </Tree>
           <h5>Herbivores</h5>
         </Tree>
+      </div>
+
+      {/* Pagination */}
+      <h5 className="py-4">Pagination</h5>
+      <div className="flex">
+        <Pagination />
       </div>
     </Wrapper>
   );

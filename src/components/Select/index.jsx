@@ -5,6 +5,8 @@ function CSelect({
   children,
   className,
   placeholder = "Select...",
+  width,
+  height,
   isClearable = false,
   isSearchable = false,
   isMulti = false,
@@ -25,6 +27,9 @@ function CSelect({
     control: (styles) => {
       return {
         ...styles,
+        width: width,
+
+        minHeight: height,
         borderRadius: "0.5rem",
         borderTopLeftRadius: borderTopLeftRadius,
         borderTopRightRadius: borderTopRightRadius,
@@ -43,6 +48,22 @@ function CSelect({
         },
       };
     },
+    valueContainer: (provided, state) => ({
+      ...provided,
+      padding: "0 8px",
+      fontSize: "13px",
+    }),
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: height,
+    }),
     option: (styles) => {
       return {
         ...styles,
