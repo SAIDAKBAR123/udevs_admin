@@ -170,6 +170,16 @@ const menu = [
           </svg>
         ),
       },
+      {
+        title: "Checkbox",
+        path: "/home/dashboard/checkbox",
+        isChild: true
+      },
+      {
+        title: "Radio",
+        path: "/home/dashboard/radio",
+        isChild: true
+      },
     ],
   },
   {

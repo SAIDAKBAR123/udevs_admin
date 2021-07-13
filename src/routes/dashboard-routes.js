@@ -9,6 +9,8 @@ import Avatars from "../views/avatars/Avatars";
 import TableComp from "../views/tablecomp/index";
 import Modal from "../views/modal/index";
 import Popup from "../views/popup/index";
+import Checkbox from "../views/checkbox/index";
+import Radio from "../views/radio/index";
 
 export default [
   {
@@ -103,6 +105,24 @@ export default [
     path: "/dashboard/popup",
     exact: true,
     title: "Popup",
+    permission: "",
+    children: [],
+  },
+  {
+    id: 35,
+    component: Checkbox,
+    path: "/dashboard/checkbox",
+    exact: true,
+    title: "Checkbox",
+    permission: "",
+    children: [],
+  },
+  {
+    id: 36,
+    component: Radio,
+    path: "/dashboard/radio",
+    exact: true,
+    title: "Radio",
     permission: "",
     children: [],
   },

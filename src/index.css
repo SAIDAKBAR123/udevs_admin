@@ -56,7 +56,11 @@ code {
    width: 100%;
    transition: all 0.3s;
  }
-
+ 
  input:focus {
    opacity: 0.7;
- }
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    width: unset;
+  }
