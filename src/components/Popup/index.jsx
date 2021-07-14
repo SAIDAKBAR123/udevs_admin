@@ -17,13 +17,13 @@ function Popup(props) {
     ...rest
   } = props;
 
-  const listItems = children.map((el, idx) => (
-    <p key={idx}>
-      <button className="py-1 px-3">
-        <a href={el.url}>{el.name}</a>
-      </button>
-    </p>
-  ));
+  // const listItems = children ? children.map((el, idx) => (
+  //   <p key={idx}>
+  //     <button className="py-1 px-3">
+  //       <a href={el.url}>{el.name}</a>
+  //     </button>
+  //   </p>
+  // )): '';
 
   const popupStyle = `top-${top} bottom-${bottom} right-${right} left-${left}`;
 
@@ -60,7 +60,7 @@ function Popup(props) {
                     mode === "dark" ? "text-gray-300" : "text-gray-500"
                   } font-thin my-1`}
                 >
-                  {listItems}
+                  {children}
                 </p>
               </div>
 
