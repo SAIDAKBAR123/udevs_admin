@@ -1,0 +1,128 @@
+.steps {
+  display: flex;
+
+  .step {
+    min-width: 130px;
+
+    &__indicator {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+
+      &__icon {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #DDE2E4;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.large {
+          &.finished {
+            border-color: rgba(64, 148, 247, 1);
+          }
+  
+          &.error {
+            border-color: #F76659;
+          }
+        }
+
+        &.small {
+          width: 16px;
+          height: 16px;
+          border: none;
+
+          .small-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #DDE2E4;
+
+            &.finished {
+              background-color: rgba(64, 148, 247, 1);
+            }
+          }
+        }
+      }
+
+      &__line {
+        flex: 1;
+        height: 2px;
+        background-color: #DDE2E4;
+        position: relative;
+        overflow: hidden;
+
+        &.hidden {
+          display: none;
+        }
+
+        .passed-status {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(64, 148, 247, 1);
+          transform: translateX(-100%);
+          transition-duration: 0.4s;
+
+          &.passed {
+            transform: translateX(0);
+          }
+        }
+
+      }
+    }
+
+    &__description {
+      padding-right: 24px;
+
+      &__title {
+        line-height: 24px;
+        font-weight: bold;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      &__text {
+        line-height: 20px;
+        font-size: 14px;
+      }
+    }
+
+
+    &:last-of-type {
+      width: auto;
+      max-width: 200px;
+
+      .step__indicator__line {
+        display: none;
+      }
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+
+    .step {
+      min-width: auto;
+      max-width: 300px;  
+      display: flex;
+      min-height: 110px;
+
+      &__indicator {
+        flex-direction: column;
+        margin-right: 20px;
+        margin-bottom: 0;
+
+        &__line {
+          width: 2px;
+        }
+
+      }
+    }
+  }
+
+
+}

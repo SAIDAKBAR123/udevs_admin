@@ -171,8 +171,8 @@ const menu = [
         ),
       },
       {
-        title: "Menu",
-        path: "/home/dashboard/menu",
+        title: "Steps",
+        path: "/home/dashboard/steps",
         isChild: true,
         icon: (
           <svg
