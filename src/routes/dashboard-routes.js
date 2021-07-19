@@ -10,6 +10,7 @@ import TableComp from "../views/tablecomp/index";
 import Modal from "../views/modal/index";
 import Popup from "../views/popup/index";
 import Steps from "../views/steps";
+import DatePickers from '../views/datePickers'
 
 export default [
   {
@@ -113,6 +114,15 @@ export default [
     path: "/dashboard/steps",
     exact: true,
     title: "Steps",
+    permission: "",
+    children: []
+  },
+  {
+    id: 38,
+    component: DatePickers,
+    path: "/dashboard/datePickers",
+    exact: true,
+    title: "Date Pickers",
     permission: "",
     children: []
   }

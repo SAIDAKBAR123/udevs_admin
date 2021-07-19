@@ -33,6 +33,8 @@ const steps1 = [
   },
 ];
 
+const extraContent = <h1>Extra content</h1>
+
 export default function App() {
   return (
     <Wrapper header="Steps" className="font-body">
@@ -41,12 +43,12 @@ export default function App() {
       <h2>Horizontal (large)</h2>
       <hr />
       <div style={{ padding: "20px" }}>
-        <Steps steps={steps1} />
+        <Steps steps={steps1}  />
 
         <hr style={{ margin: "20px" }} />
         <Steps>
           {steps1.map((step, index) => (
-            <Step key={index} passed={step.passed} type={step.type}>
+            <Step key={index} passed={step.passed} type={step.type} >
               <h1>Hello world</h1>
             </Step>
           ))}
@@ -70,6 +72,7 @@ export default function App() {
               passed={step.passed}
               type={step.type}
               subtitle={step.title}
+              extra={extraContent}
             />
           ))}
         </Steps>
@@ -97,6 +100,7 @@ export default function App() {
               passed={step.passed}
               type={step.type}
               subtitle={step.title}
+              extra={extraContent}
             />
           ))}
         </Steps>
