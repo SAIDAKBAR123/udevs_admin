@@ -11,6 +11,8 @@ import Modal from "../views/modal/index";
 import Popup from "../views/popup/index";
 import Steps from "../views/steps";
 import DatePickers from '../views/datePickers'
+import Checkbox from "../views/checkbox/index";
+import Radio from "../views/radio/index";
 
 export default [
   {
@@ -100,7 +102,7 @@ export default [
     children: [],
   },
   {
-    id: 35,
+    id: 34,
     component: Popup,
     path: "/dashboard/popup",
     exact: true,
@@ -125,5 +127,23 @@ export default [
     title: "Date Pickers",
     permission: "",
     children: []
-  }
+  },
+  {
+    id: 35,
+    component: Checkbox,
+    path: "/dashboard/checkbox",
+    exact: true,
+    title: "Checkbox",
+    permission: "",
+    children: [],
+  },
+  {
+    id: 36,
+    component: Radio,
+    path: "/dashboard/radio",
+    exact: true,
+    title: "Radio",
+    permission: "",
+    children: [],
+  },
 ].map((route) => ({ ...route, path: `/home${route.path}` }));
