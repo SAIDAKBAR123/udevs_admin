@@ -1,0 +1,28 @@
+/* arrow top */
+.customTop:after {
+  content: "";
+  display: block;
+
+  position: absolute;
+
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  border-bottom: 12px solid #333;
+
+  top: -6px;
+}
+
+/* arrow left*/
+.customLeft:after {
+  content: "";
+  display: block;
+
+  position: absolute;
+
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #333;
+
+  left: -6px;
+  bottom: 6px;
+}

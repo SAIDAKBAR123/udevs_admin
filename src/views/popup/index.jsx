@@ -32,14 +32,14 @@ export default function App() {
           className="bg-blue-500 hover:bg-blue-400 rounded-md text-white py-2 px-4 my-2"
           onClick={() => setShowPopup((prev) => !prev)}
         >
-          Popup
+          Click me fast
         </button>
         <Popup
           mode="dark"
           isOpen={showPopup}
           onClose={() => setShowPopup((prev) => !prev)}
         >
-          {items}
+          Popopopoo popo popopopopopoo dasdas asdasd asdasd asdas
         </Popup>
       </div>
     </Wrapper>

@@ -1,17 +1,17 @@
+import { useState, useEffect } from "react";
+import { useHistory, NavLink } from "react-router-dom";
+import config from "../../config/defaultSettings";
+import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from "@material-ui/core/styles";
+import Avatar from "../Avatar/Index";
+import Badge from "../Badge/Index";
+import "./index.scss";
+import menu from "./menu";
+import Menu from "../Menu/index";
+import MenuItem from "../Menu/MenuItem";
+// import Menu from "@material-ui/core/Menu";
+// import MenuItem from "@material-ui/core/MenuItem";
 
-
-import { useState, useEffect } from 'react'
-import { useHistory, NavLink } from 'react-router-dom'
-import config from '../../config/defaultSettings'
-import Tooltip from '@material-ui/core/Tooltip'
-import { makeStyles } from '@material-ui/core/styles'
-import Avatar from "../Avatar/Index"
-import Badge from "../Badge/Index"
-import './index.scss'
-import menu from './menu'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import Popup from '../Popup/index'
 const useStylesBootstrap = makeStyles((theme) => ({
   arrow: {
     color: theme.palette.common.black,

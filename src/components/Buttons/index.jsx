@@ -14,8 +14,9 @@ const useStyles = makeStyles((theme) => ({
 export default function Button(props) {
   const classes = useStyles();
   const {
+    className,
     children,
-    icon,
+    icon: Icon,
     color = "primary",
     loading = false,
     shape = "filled",
@@ -31,18 +32,21 @@ export default function Button(props) {
     switch (key) {
       case "small":
         return {
-          size: "px-3 py-1",
-          fontSize: "text-xs",
+          size: "h-6 px-2 py-0",
+          fontSize: "text-sm",
+          radius: "rounded",
         };
       case "medium":
         return {
-          size: "px-3 py-1 min:w-7 min:h-7",
+          size: "h-8 px-3 py-1 min:w-7",
           fontSize: "text-sm",
+          radius: "rounded-md",
         };
       case "large":
         return {
-          size: "px-6 py-2",
-          fontSize: "text-base",
+          size: "px-4 py-2",
+          fontSize: "text-sm",
+          radius: "rounded-md",
         };
 
       default:
@@ -72,16 +76,18 @@ export default function Button(props) {
 
   return (
     <div>
-      <div className="">
-        <button
-          type="button"
-          className={`
-                        rounded-lg
+      <button
+        type="button"
+        className={`
+                        ${className}
+                        
                         focus:outline-none
                         transition
                         ${children ? "" : "w-9 h-9"}
                         focus:ring focus:border-blue-300 
+                        focus-within:z-40
                         ${getSize(size).size}
+                        ${getSize(size).radius}
                         ${
                           props.disabled
                             ? "bg-gray-200 cursor-not-allowed"
@@ -89,19 +95,19 @@ export default function Button(props) {
                         }
                         text-white 
                         `}
-          {...rest}
+        {...rest}
+      >
+        <div
+          className={`flex items-center ${
+            children ? "space-x-2" : ""
+          } font-medium font-semibold`}
         >
-          <div
-            className={`flex justify-around items-center ${
-              children ? "space-x-2" : ""
-            } font-medium font-semibold`}
-          >
-            {position === "left" && icon}
-            <div className={getSize(size).fontSize}>{children}</div>
-            {position === "right" && icon}
-          </div>
-        </button>
-      </div>
+          {Icon && position === "left" && <Icon style={{ fontSize: "18px" }} />}
+
+          <div className={getSize(size).fontSize}>{children}</div>
+          {position === "right" && <Icon />}
+        </div>
+      </button>
     </div>
   );
 }

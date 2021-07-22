@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import PropTypes from "prop-types";
 
 function Menu(props) {

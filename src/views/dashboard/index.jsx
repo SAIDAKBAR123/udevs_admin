@@ -334,6 +334,7 @@ export default function App() {
         title="Общий отчет"
         headings={["Число", "Доставка", "Доставка", "Самовывоз", "Агрегаторы"]}
         sourceData={tableData}
+        checkboxSelection
       />
       <div></div>
     </div>
