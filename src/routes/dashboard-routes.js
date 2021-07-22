@@ -1,10 +1,10 @@
 import Dashboard from "../views/dashboard/index.jsx";
 import Profile from "../views/profiles/index.jsx";
-import UiComponents from "../views/ui-components/index.jsx";
+// import UiComponents from "../views/ui-components/index.jsx";
 import Accordions from "../views/accordions/Accordions.jsx";
 import Buttons from "../views/buttons/index";
 import Cards from "../views/cards/index";
-import TableOrder from "../views/tableOrder";
+// import TableOrder from "../views/tableOrder/index";
 import Avatars from "../views/avatars/Avatars";
 import TableComp from "../views/tablecomp/index";
 import Modal from "../views/modal/index";
@@ -52,16 +52,16 @@ export default [
     permission: "",
     children: [],
   },
-  {
-    id: 34,
-    component: TableOrder,
-    path: "/table-ui",
-    exact: true,
-    title: "Table ui",
-    showSidepanel: false,
-    permission: "",
-    children: [],
-  },
+  // {
+  //   id: 34,
+  //   component: TableOrder,
+  //   path: "/table-ui",
+  //   exact: true,
+  //   title: "Table ui",
+  //   showSidepanel: false,
+  //   permission: "",
+  //   children: [],
+  // },
   {
     id: 4,
     component: Avatars,
@@ -72,15 +72,15 @@ export default [
     permission: "",
     children: [],
   },
-  {
-    id: 13,
-    component: UiComponents,
-    path: "/table",
-    exact: true,
-    title: "UI component",
-    permission: "",
-    children: [],
-  },
+  // {
+  //   id: 13,
+  //   component: UiComponents,
+  //   path: "/table",
+  //   exact: true,
+  //   title: "UI component",
+  //   permission: "",
+  //   children: [],
+  // },
   {
     id: 45,
     component: TableComp,
