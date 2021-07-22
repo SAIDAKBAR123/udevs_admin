@@ -4,7 +4,7 @@ import UiComponents from "../views/ui-components/index.jsx";
 import Accordions from "../views/accordions/Accordions.jsx";
 import Buttons from "../views/buttons/index";
 import Cards from "../views/cards/index";
-// import TableOrder from "../views/tableOrder";
+import TableOrder from "../views/tableOrder";
 import Avatars from "../views/avatars/Avatars";
 import TableComp from "../views/tablecomp/index";
 import Modal from "../views/modal/index";
